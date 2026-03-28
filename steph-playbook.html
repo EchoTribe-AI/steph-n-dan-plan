@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mommy & Me Collective — AI Content Playbook</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --coral: #F4694B;
+    --coral-light: #FDECEA;
+    --teal: #2BBFB3;
+    --teal-light: #E4F8F7;
+    --cream: #FDF8F2;
+    --ink: #1A1A2E;
+    --ink-muted: #5C5C7A;
+    --gold: #F5A623;
+    --gold-light: #FEF6E4;
+    --green: #3DBE6C;
+    --green-light: #E6F9EE;
+    --border: #EDE8E0;
+    --shadow: 0 4px 24px rgba(26,26,46,0.08);
+    --shadow-lg: 0 12px 48px rgba(26,26,46,0.14);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.6;
+  }
+
+  /* ─── HEADER ─── */
+  .header {
+    background: var(--ink);
+    padding: 64px 48px 56px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 360px; height: 360px;
+    background: radial-gradient(circle, rgba(244,105,75,0.25) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: 200px;
+    width: 280px; height: 280px;
+    background: radial-gradient(circle, rgba(43,191,179,0.18) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .header-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  .header-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(244,105,75,0.15);
+    border: 1px solid rgba(244,105,75,0.3);
+    color: var(--coral);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 100px;
+    margin-bottom: 24px;
+  }
+  .header h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: 52px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+  .header h1 span { color: var(--coral); }
+  .header-sub {
+    font-size: 18px;
+    color: rgba(255,255,255,0.65);
+    font-weight: 300;
+    max-width: 560px;
+    margin-bottom: 40px;
+  }
+  .header-stats {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  .hstat {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .hstat-val {
+    font-family: 'Syne', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+  }
+  .hstat-val span { color: var(--coral); }
+  .hstat-label {
+    font-size: 12px;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  /* ─── LAYOUT ─── */
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  section { padding: 72px 0; }
+  section + section { border-top: 1px solid var(--border); }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--coral);
+    margin-bottom: 8px;
+  }
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 12px;
+  }
+  .section-desc {
+    font-size: 16px;
+    color: var(--ink-muted);
+    max-width: 600px;
+    margin-bottom: 48px;
+  }
+
+  /* ─── INTRO / HOW IT WORKS ─── */
+  .how-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .how-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+    position: relative;
+  }
+  .how-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 48px;
+    font-weight: 800;
+    color: var(--border);
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+  .how-card h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .how-card p {
+    font-size: 14px;
+    color: var(--ink-muted);
+    line-height: 1.6;
+  }
+  .how-arrow {
+    position: absolute;
+    top: 50%; right: -20px;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: var(--border);
+    z-index: 2;
+    font-weight: 300;
+  }
+
+  /* ─── CADENCE CALENDAR ─── */
+  .cadence-bar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  .cadence-day {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 10px;
+    text-align: center;
+    position: relative;
+    transition: transform 0.2s;
+  }
+  .cadence-day:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+  .cadence-day.active {
+    border-color: transparent;
+    box-shadow: var(--shadow);
+  }
+  .cadence-day.coral { background: var(--coral); }
+  .cadence-day.teal { background: var(--teal); }
+  .cadence-day.gold { background: var(--gold); }
+  .cadence-day.green { background: var(--green); }
+  .cday-name {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 10px;
+  }
+  .cadence-day.active .cday-name { color: rgba(255,255,255,0.75); }
+  .cday-emoji { font-size: 22px; margin-bottom: 8px; }
+  .cday-label {
+    font-family: 'Syne', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--ink);
+  }
+  .cadence-day.active .cday-label { color: #fff; }
+  .cadence-note {
+    text-align: center;
+    font-size: 13px;
+    color: var(--ink-muted);
+    padding: 12px;
+    background: var(--cream);
+    border-radius: 8px;
+  }
+
+  /* ─── CONTENT ENGINE CARDS ─── */
+  .engine-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .engine-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  .engine-header {
+    padding: 28px 28px 20px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .engine-icon {
+    width: 48px; height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+  .engine-icon.coral { background: var(--coral-light); }
+  .engine-icon.teal { background: var(--teal-light); }
+  .engine-icon.gold { background: var(--gold-light); }
+  .engine-icon.green { background: var(--green-light); }
+  .engine-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .engine-tag {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 6px;
+  }
+  .engine-tag.coral { background: var(--coral-light); color: var(--coral); }
+  .engine-tag.teal { background: var(--teal-light); color: var(--teal); }
+  .engine-tag.gold { background: var(--gold-light); color: var(--gold); }
+  .engine-tag.green { background: var(--green-light); color: var(--green); }
+  .engine-body { padding: 24px 28px; }
+  .engine-desc {
+    font-size: 14px;
+    color: var(--ink-muted);
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+
+  /* FB POST MOCKUP */
+  .fb-mockup {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  .fb-header {
+    padding: 12px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .fb-avatar {
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--coral), var(--gold));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .fb-name { font-size: 13px; font-weight: 600; color: #1c1e21; line-height: 1.2; }
+  .fb-time { font-size: 11px; color: #8a8d91; }
+  .fb-globe { font-size: 11px; color: #8a8d91; }
+  .fb-body { padding: 12px 14px; font-size: 14px; color: #1c1e21; line-height: 1.5; }
+  .fb-body .highlight { color: var(--coral); font-weight: 600; }
+  .fb-collage {
+    display: grid;
+    gap: 2px;
+    background: #eee;
+  }
+  .fb-collage.grid-3 { grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; }
+  .fb-collage.grid-2 { grid-template-columns: 1fr 1fr; }
+  .fb-collage.grid-1 { grid-template-columns: 1fr; }
+  .fb-collage.grid-3 .fc-item:first-child { grid-column: 1 / -1; }
+  .fc-item {
+    background: var(--cream);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 10px;
+    gap: 6px;
+    min-height: 80px;
+  }
+  .fc-item .product-emoji { font-size: 26px; }
+  .fc-item .product-name { font-size: 10px; text-align: center; color: var(--ink); font-weight: 500; line-height: 1.3; }
+  .fc-item .product-price {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--coral);
+    font-family: 'Syne', sans-serif;
+  }
+  .fb-actions {
+    padding: 8px 14px;
+    border-top: 1px solid #f0f0f0;
+    display: flex;
+    gap: 4px;
+  }
+  .fb-btn {
+    flex: 1;
+    text-align: center;
+    font-size: 12px;
+    color: #8a8d91;
+    font-weight: 600;
+    padding: 6px 0;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  .fb-btn:hover { background: #f5f5f5; }
+
+  .fb-stats {
+    padding: 6px 14px;
+    font-size: 11px;
+    color: #8a8d91;
+    border-top: 1px solid #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .engine-meta {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  .meta-chip {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 100px;
+    background: var(--cream);
+    color: var(--ink-muted);
+    border: 1px solid var(--border);
+  }
+
+  /* ─── 8 THEMES ─── */
+  .themes-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .theme-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: default;
+  }
+  .theme-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+  .theme-hero {
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    position: relative;
+  }
+  .theme-number {
+    position: absolute;
+    top: 10px; left: 12px;
+    font-family: 'Syne', sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 1px;
+  }
+  .theme-body { padding: 16px; }
+  .theme-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .theme-trigger {
+    font-size: 11px;
+    color: var(--ink-muted);
+    margin-bottom: 10px;
+  }
+  .theme-ai-rule {
+    background: var(--cream);
+    border-radius: 8px;
+    padding: 8px 10px;
+    font-size: 10.5px;
+    color: var(--ink-muted);
+    font-family: 'DM Mono', 'Courier New', monospace;
+    line-height: 1.6;
+  }
+  .theme-ai-rule strong { color: var(--ink); }
+
+  /* ─── NEWSLETTER BRIDGE ─── */
+  .nl-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: start;
+  }
+  .nl-side-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .nl-side-label span {
+    display: inline-block;
+    width: 24px; height: 2px;
+    background: currentColor;
+  }
+  .nl-mockup {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  .nl-top {
+    background: var(--ink);
+    padding: 20px 20px 16px;
+  }
+  .nl-logo {
+    font-family: 'Syne', sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 4px;
+  }
+  .nl-subject {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    font-style: italic;
+  }
+  .nl-content { padding: 16px 20px; }
+  .nl-section-head {
+    font-family: 'Syne', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  .nl-product-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--cream);
+  }
+  .nl-product-row:last-child { border: none; }
+  .nl-pico { font-size: 20px; }
+  .nl-pname { font-size: 12px; font-weight: 500; flex: 1; }
+  .nl-pprice { font-size: 12px; font-weight: 700; color: var(--coral); }
+  .nl-cta {
+    margin-top: 14px;
+    background: var(--coral);
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .nl-arrow-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--ink-muted);
+    font-size: 13px;
+    padding-top: 40px;
+  }
+  .nl-arrow-center .big-arrow {
+    font-size: 32px;
+    color: var(--teal);
+  }
+  .nl-formats {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 24px;
+  }
+  .nl-format {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-size: 13px;
+  }
+  .nl-format-icon { font-size: 20px; }
+  .nl-format-name { font-weight: 600; flex: 1; }
+  .nl-format-badge {
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+  .nl-format-badge.auto { background: var(--green-light); color: var(--green); }
+  .nl-format-badge.manual { background: var(--gold-light); color: var(--gold); }
+
+  /* ─── AI WORKFLOW ─── */
+  .workflow-flow {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  .wf-step {
+    flex: 1;
+    padding: 28px 24px;
+    border-right: 1px solid var(--border);
+    position: relative;
+  }
+  .wf-step:last-child { border-right: none; }
+  .wf-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--border);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .wf-icon { font-size: 24px; margin-bottom: 8px; }
+  .wf-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .wf-desc { font-size: 12px; color: var(--ink-muted); line-height: 1.5; }
+  .wf-arrow {
+    position: absolute;
+    right: -14px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 28px; height: 28px;
+    background: var(--coral);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 13px;
+    z-index: 2;
+  }
+
+  /* ─── MULTIPLIER STRIP ─── */
+  .multiplier-strip {
+    background: var(--ink);
+    border-radius: 20px;
+    padding: 40px 48px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 32px;
+    align-items: center;
+    color: #fff;
+    margin: 48px 0;
+  }
+  .ms-side { }
+  .ms-label {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 10px;
+  }
+  .ms-number {
+    font-family: 'Syne', sans-serif;
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .ms-number.coral { color: var(--coral); }
+  .ms-number.teal { color: var(--teal); }
+  .ms-desc { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.5; }
+  .ms-divider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .ms-eq {
+    font-family: 'Syne', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--gold);
+  }
+
+  /* ─── FOOTER ─── */
+  .footer {
+    background: var(--ink);
+    padding: 40px 48px;
+    text-align: center;
+  }
+  .footer-logo {
+    font-family: 'Syne', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  .footer-logo span { color: var(--coral); }
+  .footer-sub {
+    font-size: 13px;
+    color: rgba(255,255,255,0.4);
+  }
+
+  /* ─── COLLAGE PREVIEW SECTION ─── */
+  .collage-preview {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+    background: var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 16px;
+  }
+  .cp-item {
+    background: var(--cream);
+    padding: 14px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    min-height: 90px;
+    justify-content: center;
+  }
+  .cp-item .e { font-size: 28px; }
+  .cp-item .n { font-size: 9.5px; text-align: center; color: var(--ink); font-weight: 500; line-height: 1.3; }
+  .cp-item .p { font-size: 12px; font-weight: 700; color: var(--coral); font-family: 'Syne', sans-serif; }
+  .cp-item.wide { grid-column: 1 / -1; min-height: 60px; background: var(--ink); }
+  .cp-item.wide .n { color: rgba(255,255,255,0.85); font-size: 13px; font-weight: 600; letter-spacing: 0.5px; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 768px) {
+    .header { padding: 40px 24px; }
+    .header h1 { font-size: 36px; }
+    .container { padding: 0 20px; }
+    .how-grid { grid-template-columns: 1fr; }
+    .engine-grid { grid-template-columns: 1fr; }
+    .themes-grid { grid-template-columns: 1fr 1fr; }
+    .nl-split { grid-template-columns: 1fr; }
+    .workflow-flow { flex-direction: column; }
+    .wf-step { border-right: none; border-bottom: 1px solid var(--border); }
+    .multiplier-strip { grid-template-columns: 1fr; text-align: center; }
+    .cadence-bar { grid-template-columns: repeat(4, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-inner">
+    <div class="header-badge">🤖 Powered by EchoTribe AI</div>
+    <h1>The AI Content<br>Cadence <span>Playbook</span></h1>
+    <p class="header-sub">How Mommy & Me Collective turns affiliate data + trending signals into a weekly content machine — without extra work.</p>
+    <div class="header-stats">
+      <div class="hstat">
+        <div class="hstat-val"><span>474K</span></div>
+        <div class="hstat-label">Link Clicks YTD</div>
+      </div>
+      <div class="hstat">
+        <div class="hstat-val"><span>$1.75M</span></div>
+        <div class="hstat-label">Walmart Sales</div>
+      </div>
+      <div class="hstat">
+        <div class="hstat-val"><span>6,968</span></div>
+        <div class="hstat-label">Toy Units Shipped</div>
+      </div>
+      <div class="hstat">
+        <div class="hstat-val">5<span>×</span></div>
+        <div class="hstat-label">More Posts, Same Effort</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section>
+  <div class="container">
+    <div class="section-label">The System</div>
+    <h2 class="section-title">AI detects signals. You post. <br>Everything earns.</h2>
+    <p class="section-desc">Instead of manually deciding what to post, the AI reads your affiliate data, click patterns, and brand promos — then builds the content for you.</p>
+    <div class="how-grid">
+      <div class="how-card">
+        <div class="how-num">01</div>
+        <h3>📡 Signal Detection</h3>
+        <p>AI reads your URLGenius clicks, Amazon sales, Walmart conversions, and brand promotions in real time. It knows what's moving before you do.</p>
+        <div class="how-arrow">→</div>
+      </div>
+      <div class="how-card">
+        <div class="how-num">02</div>
+        <h3>🧠 Theme Merchandising</h3>
+        <p>Products get sorted into the right content theme automatically — Under $25, Trending Now, Problem Solvers, Retailer Deals, and more.</p>
+        <div class="how-arrow">→</div>
+      </div>
+      <div class="how-card">
+        <div class="how-num">03</div>
+        <h3>✍️ Content Generation</h3>
+        <p>AI writes the caption in Steph's voice, builds the collage, attaches all affiliate links, and queues the newsletter version. One product set → 4 formats.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CADENCE CALENDAR -->
+<section>
+  <div class="container">
+    <div class="section-label">Weekly Rhythm</div>
+    <h2 class="section-title">The 7-Day Posting Cadence</h2>
+    <p class="section-desc">Each day has a pre-set content engine. AI fills it automatically. Steph reviews, approves, and posts.</p>
+    <div class="cadence-bar">
+      <div class="cadence-day active coral">
+        <div class="cday-name">Mon</div>
+        <div class="cday-emoji">🔍</div>
+        <div class="cday-label">What We Found This Week</div>
+      </div>
+      <div class="cadence-day active teal">
+        <div class="cday-name">Tue</div>
+        <div class="cday-emoji">💡</div>
+        <div class="cday-label">Things You Didn't Know You Needed</div>
+      </div>
+      <div class="cadence-day active gold">
+        <div class="cday-name">Wed</div>
+        <div class="cday-emoji">🔥</div>
+        <div class="cday-label">Trending Now (72hr Signals)</div>
+      </div>
+      <div class="cadence-day active green">
+        <div class="cday-name">Thu</div>
+        <div class="cday-emoji">🛒</div>
+        <div class="cday-label">Retailer Deal Roundup</div>
+      </div>
+      <div class="cadence-day active coral">
+        <div class="cday-name">Fri</div>
+        <div class="cday-emoji">💰</div>
+        <div class="cday-label">Under $25 Finds</div>
+      </div>
+      <div class="cadence-day">
+        <div class="cday-name">Sat</div>
+        <div class="cday-emoji">📸</div>
+        <div class="cday-label">Steph's Faves</div>
+      </div>
+      <div class="cadence-day active teal">
+        <div class="cday-name">Sun</div>
+        <div class="cday-emoji">🏆</div>
+        <div class="cday-label">Weekly Best Sellers</div>
+      </div>
+    </div>
+    <div class="cadence-note">Saturday is optional / free-form. All other days are AI-generated and ready to post in the dashboard.</div>
+  </div>
+</section>
+
+<!-- 4 CONTENT ENGINES -->
+<section>
+  <div class="container">
+    <div class="section-label">Content Engines</div>
+    <h2 class="section-title">4 Engines. Every Post Earns.</h2>
+    <p class="section-desc">Each engine generates Facebook posts, collages, stories, and newsletters from the same product set. Zero duplication of effort.</p>
+
+    <div class="engine-grid">
+
+      <!-- ENGINE 1: Daily Discovery -->
+      <div class="engine-card">
+        <div class="engine-header">
+          <div class="engine-icon coral">🔍</div>
+          <div>
+            <div class="engine-title">Daily "Today's Finds"</div>
+            <div class="engine-tag coral">Discovery Engine</div>
+          </div>
+        </div>
+        <div class="engine-body">
+          <p class="engine-desc">AI scans top clicks + brand promos from the last 24 hours and generates a fresh "what we found today" post. High frequency = high saves.</p>
+          <div class="fb-mockup">
+            <div class="fb-header">
+              <div class="fb-avatar">M</div>
+              <div>
+                <div class="fb-name">Mommy & Me Collective</div>
+                <div class="fb-time">Just now · <span class="fb-globe">🌐</span></div>
+              </div>
+            </div>
+            <div class="fb-body">
+              🔥 <span class="highlight">Today's Best Amazon + Walmart Finds</span><br><br>
+              We always share what's actually worth buying 👇<br><br>
+              • Glitter Dumpling Squishy — $8.24 🧸<br>
+              • LED Recessed Ceiling Light — $11.99 💡<br>
+              • FURBY Furblets Mini Plush — $3.99 🎮<br>
+              • Sticker Book 1500pc — $7.99 ✂️<br><br>
+              🔗 Links in bio or comment "DEALS" 👇
+            </div>
+            <div class="fb-collage grid-2">
+              <div class="fc-item">
+                <div class="product-emoji">🧸</div>
+                <div class="product-name">Glitter Dumpling Squishy</div>
+                <div class="product-price">$8.24</div>
+              </div>
+              <div class="fc-item">
+                <div class="product-emoji">💡</div>
+                <div class="product-name">LED Ceiling Light</div>
+                <div class="product-price">$11.99</div>
+              </div>
+              <div class="fc-item">
+                <div class="product-emoji">🎮</div>
+                <div class="product-name">FURBY Furblets Mini</div>
+                <div class="product-price">$3.99</div>
+              </div>
+              <div class="fc-item">
+                <div class="product-emoji">✂️</div>
+                <div class="product-name">1500pc Sticker Book</div>
+                <div class="product-price">$7.99</div>
+              </div>
+            </div>
+            <div class="fb-stats">
+              <span>👍❤️ 284</span>
+              <span>47 comments · 138 shares</span>
+            </div>
+            <div class="fb-actions">
+              <div class="fb-btn">👍 Like</div>
+              <div class="fb-btn">💬 Comment</div>
+              <div class="fb-btn">↗️ Share</div>
+            </div>
+          </div>
+          <div class="engine-meta">
+            <div class="meta-chip">📊 Pulls URLGenius clicks</div>
+            <div class="meta-chip">🏪 Amazon + Walmart</div>
+            <div class="meta-chip">⚡ Auto-generated daily</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ENGINE 2: Trending Now -->
+      <div class="engine-card">
+        <div class="engine-header">
+          <div class="engine-icon teal">🔥</div>
+          <div>
+            <div class="engine-title">Trending Now (72-Hour)</div>
+            <div class="engine-tag teal">Social Proof Engine</div>
+          </div>
+        </div>
+        <div class="engine-body">
+          <p class="engine-desc">The 72-hour trending window catches products gaining momentum before they peak. FOMO + social proof = the highest-converting format in deal communities.</p>
+          <div class="fb-mockup">
+            <div class="fb-header">
+              <div class="fb-avatar">M</div>
+              <div>
+                <div class="fb-name">Mommy & Me Collective</div>
+                <div class="fb-time">2 hrs ago · <span class="fb-globe">🌐</span></div>
+              </div>
+            </div>
+            <div class="fb-body">
+              🔥 <span class="highlight">Everyone Is Buying These Right Now</span><br><br>
+              These blew up in our group this week — links below 👇<br><br>
+              📈 Barbie Dreamhouse — 37,199 clicks this week<br>
+              📈 Glitter Dumpling Squishy — 702 sold<br>
+              📈 Sticker Book — spiking in saves<br>
+              📈 Easter Whoa Dough 3-Pack — trending<br><br>
+              Comment "WANT" for links! 💕
+            </div>
+            <div class="fb-collage grid-2">
+              <div class="fc-item">
+                <div class="product-emoji">🏠</div>
+                <div class="product-name">Barbie Dreamhouse</div>
+                <div class="product-price">#1 Clicked</div>
+              </div>
+              <div class="fc-item">
+                <div class="product-emoji">🧸</div>
+                <div class="product-name">Glitter Dumpling Squishy</div>
+                <div class="product-price">702 sold</div>
+              </div>
+              <div class="fc-item">
+                <div class="product-emoji">🌸</div>
+                <div class="product-name">Easter Whoa Dough</div>
+                <div class="product-price">Trending</div>
+              </div>
+              <div class="fc-item">
+                <div class="product-emoji">✂️</div>
+                <div class="product-name">Just My Style Sticker Book</div>
+                <div class="product-price">↑ Spiking</div>
+              </div>
+            </div>
+            <div class="fb-stats">
+              <span>👍❤️🔥 1.2K</span>
+              <span>318 comments · 891 shares</span>
+            </div>
+            <div class="fb-actions">
+              <div class="fb-btn">👍 Like</div>
+              <div class="fb-btn">💬 Comment</div>
+              <div class="fb-btn">↗️ Share</div>
+            </div>
+          </div>
+          <div class="engine-meta">
+            <div class="meta-chip">📈 Sales + click velocity</div>
+            <div class="meta-chip">⏱️ 72hr window</div>
+            <div class="meta-chip">🎯 FOMO trigger</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ENGINE 3: Weekly Best Sellers -->
+      <div class="engine-card">
+        <div class="engine-header">
+          <div class="engine-icon gold">🏆</div>
+          <div>
+            <div class="engine-title">Weekly Best Sellers</div>
+            <div class="engine-tag gold">Authority Engine</div>
+          </div>
+        </div>
+        <div class="engine-body">
+          <p class="engine-desc">Sunday night or Monday morning — the weekly authority post. Top 6–9 products ranked by your real sales data. This becomes the most-saved post of the week.</p>
+          <div class="fb-mockup">
+            <div class="fb-header">
+              <div class="fb-avatar">M</div>
+              <div>
+                <div class="fb-name">Mommy & Me Collective</div>
+                <div class="fb-time">Sun 8:00 PM · <span class="fb-globe">🌐</span></div>
+              </div>
+            </div>
+            <div class="fb-body">
+              🏆 <span class="highlight">Best Finds This Week</span><br><br>
+              These were your favorites — our most-clicked and most-sold products this week 💕<br><br>
+              Every single link is below ⬇️
+            </div>
+            <div class="collage-preview">
+              <div class="cp-item wide"><div class="n">🏆 THIS WEEK'S WINNERS</div></div>
+              <div class="cp-item"><div class="e">🧸</div><div class="n">Glitter Dumpling Squishy</div><div class="p">$8.24</div></div>
+              <div class="cp-item"><div class="e">🏠</div><div class="n">Barbie Dreamhouse</div><div class="p">Top Click</div></div>
+              <div class="cp-item"><div class="e">✂️</div><div class="n">Sticker Book 1500pc</div><div class="p">$7.99</div></div>
+              <div class="cp-item"><div class="e">💡</div><div class="n">LED Ceiling Light</div><div class="p">$11.99</div></div>
+              <div class="cp-item"><div class="e">🌸</div><div class="n">Easter Dough 3pk</div><div class="p">$5.99</div></div>
+              <div class="cp-item"><div class="e">🎮</div><div class="n">FURBY Furblets</div><div class="p">$3.99</div></div>
+            </div>
+            <div class="fb-stats">
+              <span>👍❤️ 2.1K</span>
+              <span>441 comments · 1.8K shares</span>
+            </div>
+            <div class="fb-actions">
+              <div class="fb-btn">👍 Like</div>
+              <div class="fb-btn">💬 Comment</div>
+              <div class="fb-btn">↗️ Share</div>
+            </div>
+          </div>
+          <div class="engine-meta">
+            <div class="meta-chip">📊 Real sales data</div>
+            <div class="meta-chip">📅 Weekly cadence</div>
+            <div class="meta-chip">🔁 Most re-shared format</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ENGINE 4: Retailer Deals -->
+      <div class="engine-card">
+        <div class="engine-header">
+          <div class="engine-icon green">🛒</div>
+          <div>
+            <div class="engine-title">Retailer Deal Roundup</div>
+            <div class="engine-tag green">Revenue Engine</div>
+          </div>
+        </div>
+        <div class="engine-body">
+          <p class="engine-desc">Brand and retailer promo weeks become ready-made content. Walmart Rollback. Amazon Sale. Target Circle. AI maps your best-converting SKUs to the promo and builds the post.</p>
+          <div class="fb-mockup">
+            <div class="fb-header">
+              <div class="fb-avatar">M</div>
+              <div>
+                <div class="fb-name">Mommy & Me Collective</div>
+                <div class="fb-time">Thu 10:30 AM · <span class="fb-globe">🌐</span></div>
+              </div>
+            </div>
+            <div class="fb-body">
+              🛒 <span class="highlight">Walmart Rollback Finds Worth Buying</span><br><br>
+              These are the ones I actually checked and they're legit deals — not just "sale" pricing 👀<br><br>
+              Our Walmart CVR is 16.7% (that's wild 😅) so I only post when it's actually worth it.<br><br>
+              Links are in bio! 💕
+            </div>
+            <div class="fb-collage grid-3">
+              <div class="fc-item" style="grid-column:1/-1; background: #0071DC; padding:10px;">
+                <div class="product-emoji">🛒</div>
+                <div class="product-name" style="color:#fff; font-size:11px; font-weight:700;">WALMART ROLLBACK DEALS</div>
+              </div>
+              <div class="fc-item">
+                <div class="product-emoji">🧸</div>
+                <div class="product-name">Kids Toys</div>
+                <div class="product-price">Rollback</div>
+              </div>
+              <div class="fc-item">
+                <div class="product-emoji">🏠</div>
+                <div class="product-name">Home Essentials</div>
+                <div class="product-price">Save 30%</div>
+              </div>
+              <div class="fc-item">
+                <div class="product-emoji">👶</div>
+                <div class="product-name">Baby & Nursery</div>
+                <div class="product-price">↓ Price</div>
+              </div>
+            </div>
+            <div class="fb-stats">
+              <span>👍❤️ 847</span>
+              <span>162 comments · 509 shares</span>
+            </div>
+            <div class="fb-actions">
+              <div class="fb-btn">👍 Like</div>
+              <div class="fb-btn">💬 Comment</div>
+              <div class="fb-btn">↗️ Share</div>
+            </div>
+          </div>
+          <div class="engine-meta">
+            <div class="meta-chip">💳 Brand promo sync</div>
+            <div class="meta-chip">📊 16.7% Walmart CVR</div>
+            <div class="meta-chip">💰 Highest revenue post</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 8 COLLAGE THEMES -->
+<section>
+  <div class="container">
+    <div class="section-label">AI Collage Themes</div>
+    <h2 class="section-title">8 Themes That Drive Revenue</h2>
+    <p class="section-desc">Each theme is a template. AI selects the right products, writes the caption, attaches affiliate links. These are the formats that dominate deal communities.</p>
+    <div class="themes-grid">
+      <div class="theme-card">
+        <div class="theme-hero" style="background: linear-gradient(135deg, #FDECEA, #FDDDD8);">
+          <div class="theme-number">01</div>
+          💲
+        </div>
+        <div class="theme-body">
+          <div class="theme-name">Under $25 Finds</div>
+          <div class="theme-trigger">Psychology: Low friction → fast impulse buy</div>
+          <div class="theme-ai-rule"><strong>AI filter:</strong><br>price &lt; $25<br>rating &gt; 4.2<br>review_count &gt; 500</div>
+        </div>
+      </div>
+      <div class="theme-card">
+        <div class="theme-hero" style="background: linear-gradient(135deg, #E4F8F7, #D0F4F2);">
+          <div class="theme-number">02</div>
+          🔥
+        </div>
+        <div class="theme-body">
+          <div class="theme-name">Trending Now</div>
+          <div class="theme-trigger">Psychology: FOMO + social proof</div>
+          <div class="theme-ai-rule"><strong>AI filter:</strong><br>clicks ↑ 72hr<br>sales velocity &gt; avg<br>Hot Score &gt; 70</div>
+        </div>
+      </div>
+      <div class="theme-card">
+        <div class="theme-hero" style="background: linear-gradient(135deg, #FEF6E4, #FEF0CC);">
+          <div class="theme-number">03</div>
+          🏆
+        </div>
+        <div class="theme-body">
+          <div class="theme-name">Weekly Best Sellers</div>
+          <div class="theme-trigger">Psychology: Authority + trust</div>
+          <div class="theme-ai-rule"><strong>AI filter:</strong><br>top 9 by units sold<br>7-day window<br>multi-retailer</div>
+        </div>
+      </div>
+      <div class="theme-card">
+        <div class="theme-hero" style="background: linear-gradient(135deg, #E6F9EE, #D4F5E0);">
+          <div class="theme-number">04</div>
+          🛠️
+        </div>
+        <div class="theme-body">
+          <div class="theme-name">Problem Solvers</div>
+          <div class="theme-trigger">Psychology: Pain → solution</div>
+          <div class="theme-ai-rule"><strong>AI filter:</strong><br>categories: Home, Kitchen<br>utility keywords<br>rating &gt; 4.5</div>
+        </div>
+      </div>
+      <div class="theme-card">
+        <div class="theme-hero" style="background: linear-gradient(135deg, #F4EEFF, #EBD9FF);">
+          <div class="theme-number">05</div>
+          💡
+        </div>
+        <div class="theme-body">
+          <div class="theme-name">Didn't Know I Needed</div>
+          <div class="theme-trigger">Psychology: Curiosity stops scroll</div>
+          <div class="theme-ai-rule"><strong>AI filter:</strong><br>unique/novel products<br>impulse category<br>saves &gt; avg</div>
+        </div>
+      </div>
+      <div class="theme-card">
+        <div class="theme-hero" style="background: linear-gradient(135deg, #FFF3E4, #FFE8C8);">
+          <div class="theme-number">06</div>
+          🛒
+        </div>
+        <div class="theme-body">
+          <div class="theme-name">Retailer Deal Week</div>
+          <div class="theme-trigger">Psychology: Deal authority</div>
+          <div class="theme-ai-rule"><strong>AI filter:</strong><br>active promo events<br>top CVR products<br>by retailer</div>
+        </div>
+      </div>
+      <div class="theme-card">
+        <div class="theme-hero" style="background: linear-gradient(135deg, #E8F4FF, #D4EBFF);">
+          <div class="theme-number">07</div>
+          🌸
+        </div>
+        <div class="theme-body">
+          <div class="theme-name">Seasonal Must-Haves</div>
+          <div class="theme-trigger">Psychology: Relevance + algorithm boost</div>
+          <div class="theme-ai-rule"><strong>AI filter:</strong><br>seasonal keyword match<br>Spring / Summer / Fall<br>holiday events</div>
+        </div>
+      </div>
+      <div class="theme-card">
+        <div class="theme-hero" style="background: linear-gradient(135deg, #FDECEA, #FFE4DF);">
+          <div class="theme-number">08</div>
+          💕
+        </div>
+        <div class="theme-body">
+          <div class="theme-name">Steph's Faves</div>
+          <div class="theme-trigger">Psychology: Creator trust + repeat buys</div>
+          <div class="theme-ai-rule"><strong>AI filter:</strong><br>personal reorder tags<br>creator-selected SKUs<br>reorder > 1x</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER BRIDGE -->
+<section>
+  <div class="container">
+    <div class="section-label">The Multiplier</div>
+    <h2 class="section-title">Every Post Becomes a Newsletter</h2>
+    <p class="section-desc">The same product set that powers the Facebook post automatically generates the email version. Zero extra work. One audience becomes two revenue streams.</p>
+
+    <div class="nl-split">
+      <div>
+        <div class="nl-side-label"><span></span> Facebook Post</div>
+        <div class="fb-mockup">
+          <div class="fb-header">
+            <div class="fb-avatar">M</div>
+            <div>
+              <div class="fb-name">Mommy & Me Collective</div>
+              <div class="fb-time">Friday · Under $25 Finds</div>
+            </div>
+          </div>
+          <div class="fb-body">
+            💰 <span class="highlight">Amazon Finds Under $25 Actually Worth It</span><br><br>
+            My favorites this week that won't break the bank 🙌<br><br>
+            Comment "DEALS" for all the links 👇
+          </div>
+          <div class="fb-collage grid-2">
+            <div class="fc-item">
+              <div class="product-emoji">💡</div>
+              <div class="product-name">LED Panel Light</div>
+              <div class="product-price">$11.99</div>
+            </div>
+            <div class="fc-item">
+              <div class="product-emoji">🧸</div>
+              <div class="product-name">Glitter Squishy</div>
+              <div class="product-price">$8.24</div>
+            </div>
+            <div class="fc-item">
+              <div class="product-emoji">✂️</div>
+              <div class="product-name">Sticker Book</div>
+              <div class="product-price">$7.99</div>
+            </div>
+            <div class="fc-item">
+              <div class="product-emoji">🌸</div>
+              <div class="product-name">Easter Dough 3pk</div>
+              <div class="product-price">$5.99</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="nl-side-label" style="justify-content: center;"><span></span> Auto-Generated Newsletter <span></span></div>
+        <div style="text-align:center; padding: 20px 0; font-size: 32px;">↓</div>
+        <div class="nl-mockup">
+          <div class="nl-top">
+            <div class="nl-logo">Mommy & Me Collective 💕</div>
+            <div class="nl-subject">📬 This week's under $25 finds you'll actually use</div>
+          </div>
+          <div class="nl-content">
+            <div class="nl-section-head">💰 This Friday's Finds Under $25</div>
+            <div class="nl-product-row">
+              <div class="nl-pico">💡</div>
+              <div class="nl-pname">LED Recessed Ceiling Light Panel</div>
+              <div class="nl-pprice">$11.99</div>
+            </div>
+            <div class="nl-product-row">
+              <div class="nl-pico">🧸</div>
+              <div class="nl-pname">Glitter Dumpling Squishy</div>
+              <div class="nl-pprice">$8.24</div>
+            </div>
+            <div class="nl-product-row">
+              <div class="nl-pico">✂️</div>
+              <div class="nl-pname">Just My Style 1500pc Sticker Book</div>
+              <div class="nl-pprice">$7.99</div>
+            </div>
+            <div class="nl-product-row">
+              <div class="nl-pico">🌸</div>
+              <div class="nl-pname">Easter Whoa Dough 3-Pack</div>
+              <div class="nl-pprice">$5.99</div>
+            </div>
+            <div class="nl-cta">🔗 Shop All Deals →</div>
+          </div>
+        </div>
+        <div class="nl-formats">
+          <div class="nl-format">
+            <div class="nl-format-icon">📘</div>
+            <div class="nl-format-name">Facebook Post</div>
+            <div class="nl-format-badge auto">Auto</div>
+          </div>
+          <div class="nl-format">
+            <div class="nl-format-icon">📧</div>
+            <div class="nl-format-name">Email Newsletter</div>
+            <div class="nl-format-badge auto">Auto</div>
+          </div>
+          <div class="nl-format">
+            <div class="nl-format-icon">📱</div>
+            <div class="nl-format-name">Instagram Story</div>
+            <div class="nl-format-badge auto">Auto</div>
+          </div>
+          <div class="nl-format">
+            <div class="nl-format-icon">💬</div>
+            <div class="nl-format-name">SMS / DM Blast</div>
+            <div class="nl-format-badge manual">Review First</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MULTIPLIER STRIP -->
+<div class="container">
+  <div class="multiplier-strip">
+    <div class="ms-side">
+      <div class="ms-label">Today</div>
+      <div class="ms-number coral">1</div>
+      <div class="ms-desc">product set picked manually, one post written, one format shared</div>
+    </div>
+    <div class="ms-divider">
+      <div class="ms-eq">→</div>
+      <div style="color:rgba(255,255,255,0.3); font-size:12px; text-align:center; letter-spacing:0.5px; text-transform:uppercase;">With AI<br>Playbook</div>
+    </div>
+    <div class="ms-side">
+      <div class="ms-label">With This System</div>
+      <div class="ms-number teal">5×</div>
+      <div class="ms-desc">more posts per week, every product earning across 4 formats, every link tracked and optimized</div>
+    </div>
+  </div>
+</div>
+
+<!-- AI WORKFLOW -->
+<section>
+  <div class="container">
+    <div class="section-label">Behind the Scenes</div>
+    <h2 class="section-title">What AI Does So You Don't Have To</h2>
+    <p class="section-desc">This is the full workflow — from data to published post — in under 30 seconds.</p>
+    <div class="workflow-flow">
+      <div class="wf-step">
+        <div class="wf-num">01</div>
+        <div class="wf-icon">📡</div>
+        <div class="wf-title">Read Signals</div>
+        <div class="wf-desc">URLGenius clicks, Amazon sales, Walmart CVR, brand promos — all ingested automatically</div>
+        <div class="wf-arrow">→</div>
+      </div>
+      <div class="wf-step">
+        <div class="wf-num">02</div>
+        <div class="wf-icon">🧮</div>
+        <div class="wf-title">Score Products</div>
+        <div class="wf-desc">Hot Score formula: clicks 40% + sales 35% + Meta engagement 25% → ranked list</div>
+        <div class="wf-arrow">→</div>
+      </div>
+      <div class="wf-step">
+        <div class="wf-num">03</div>
+        <div class="wf-icon">🎨</div>
+        <div class="wf-title">Build Collage</div>
+        <div class="wf-desc">Top products matched to the day's theme, collage built with affiliate links attached</div>
+        <div class="wf-arrow">→</div>
+      </div>
+      <div class="wf-step">
+        <div class="wf-num">04</div>
+        <div class="wf-icon">✍️</div>
+        <div class="wf-title">Write Caption</div>
+        <div class="wf-desc">AI writes in Steph's voice — casual, emoji-light, honest — across all 4 output formats</div>
+        <div class="wf-arrow">→</div>
+      </div>
+      <div class="wf-step">
+        <div class="wf-num">05</div>
+        <div class="wf-icon">✅</div>
+        <div class="wf-title">Steph Approves</div>
+        <div class="wf-desc">One-tap review in the dashboard. No automated publishing — Steph stays in control always</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-logo">EchoTribe <span>AI</span></div>
+  <div class="footer-sub">AI-powered product discovery & monetization · Built for Mommy & Me Collective</div>
+</div>
+
+</body>
+</html>
