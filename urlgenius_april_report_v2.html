@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>URLgenius Click Intelligence — April 2026 Strategy</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f0e0c;
+    --paper: #f8f5f0;
+    --cream: #f0ebe2;
+    --warm-mid: #d4c9b8;
+    --accent: #c8440a;
+    --accent-light: #f5e8e2;
+    --gold: #9a6f1a;
+    --gold-light: #f5edda;
+    --teal: #0a6b5c;
+    --teal-light: #e0f0ec;
+    --purple: #4a2f7a;
+    --purple-light: #ede8f5;
+    --muted: #7a7268;
+    --border: rgba(15,14,12,0.12);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /* HEADER */
+  .header {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 64px 60px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    border: 1px solid rgba(248,245,240,0.08);
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -120px; left: 40%;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    border: 1px solid rgba(248,245,240,0.05);
+  }
+  .header-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 12px;
+  }
+  .header h1 span { color: var(--accent); }
+  .header-sub {
+    font-size: 17px;
+    color: rgba(248,245,240,0.6);
+    font-weight: 300;
+    max-width: 540px;
+    margin-bottom: 40px;
+  }
+  .header-stats {
+    display: flex;
+    gap: 40px;
+    position: relative;
+    z-index: 1;
+  }
+  .header-stat-val {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--paper);
+    line-height: 1;
+  }
+  .header-stat-label {
+    font-size: 12px;
+    color: rgba(248,245,240,0.5);
+    margin-top: 4px;
+    font-weight: 300;
+  }
+  .header-stat-divider {
+    width: 1px;
+    background: rgba(248,245,240,0.15);
+    align-self: stretch;
+  }
+
+  /* LAYOUT */
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
+  .section { padding: 56px 0; border-bottom: 1px solid var(--border); }
+  .section:last-child { border-bottom: none; }
+
+  .section-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .section-desc {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 36px;
+    max-width: 600px;
+  }
+
+  /* TREND CHART — squishy growth */
+  .trend-chart {
+    background: var(--ink);
+    border-radius: 16px;
+    padding: 36px;
+    margin-bottom: 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .trend-chart::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; right: -60px;
+    width: 280px; height: 280px;
+    border-radius: 50%;
+    border: 1px solid rgba(200,68,10,0.15);
+  }
+  .trend-chart-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--paper);
+    margin-bottom: 4px;
+  }
+  .trend-chart-sub {
+    font-size: 12px;
+    color: rgba(248,245,240,0.4);
+    margin-bottom: 32px;
+  }
+  .bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+    height: 120px;
+    margin-bottom: 12px;
+  }
+  .bar-group { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+  .bar-wrap { width: 100%; display: flex; justify-content: center; align-items: flex-end; height: 100px; }
+  .bar {
+    width: 100%;
+    border-radius: 4px 4px 0 0;
+    transition: opacity .2s;
+    position: relative;
+  }
+  .bar.total { background: rgba(248,245,240,0.12); }
+  .bar.squishy { background: var(--accent); }
+  .bar-month { font-size: 10px; color: rgba(248,245,240,0.35); font-family: 'DM Mono', monospace; }
+  .bar-val { font-size: 11px; font-weight: 500; font-family: 'DM Mono', monospace; }
+  .bar-val.total-val { color: rgba(248,245,240,0.5); }
+  .bar-val.squishy-val { color: var(--accent); }
+  .trend-legend {
+    display: flex; gap: 20px; margin-top: 16px;
+  }
+  .legend-item { display: flex; align-items: center; gap: 6px; font-size: 11px; color: rgba(248,245,240,0.5); }
+  .legend-dot { width: 8px; height: 8px; border-radius: 2px; }
+
+  /* MONTHLY GRID */
+  .months-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .month-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  .month-card-header {
+    padding: 16px 20px 12px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .month-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .month-clicks-total {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    text-align: right;
+  }
+  .month-clicks-total strong {
+    display: block;
+    font-size: 14px;
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .month-products { padding: 12px 0; }
+  .month-product {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--border);
+    transition: background .15s;
+  }
+  .month-product:last-child { border-bottom: none; }
+  .month-product:hover { background: var(--cream); }
+  .prod-rank {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--warm-mid);
+    min-width: 24px;
+  }
+  .prod-rank.r1 { color: var(--gold); }
+
+  .prod-info { flex: 1; min-width: 0; }
+  .prod-name-text {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.3;
+    color: var(--ink);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .prod-badges { display: flex; gap: 4px; margin-top: 4px; flex-wrap: wrap; }
+  .badge {
+    font-size: 9px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    white-space: nowrap;
+  }
+  .badge-cc { background: var(--purple-light); color: var(--purple); }
+  .badge-archer { background: var(--gold-light); color: var(--gold); }
+  .badge-repost { background: var(--teal-light); color: var(--teal); }
+  .badge-boost { background: var(--accent-light); color: var(--accent); }
+  .badge-evergreen { background: #e0f0ec; color: #0a5c4e; }
+  .badge-seasonal { background: var(--cream); color: var(--muted); }
+  .prod-clicks {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--ink);
+    text-align: right;
+    white-space: nowrap;
+  }
+  .prod-clicks span { display: block; font-size: 10px; color: var(--muted); font-weight: 400; }
+
+  /* APRIL ACTION PLAN */
+  .action-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .action-panel {
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  .action-panel-header {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .action-panel-icon {
+    width: 32px; height: 32px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 15px;
+    flex-shrink: 0;
+  }
+  .icon-repost { background: var(--teal-light); }
+  .icon-boost  { background: var(--accent-light); }
+  .icon-cc     { background: var(--purple-light); }
+  .icon-archer { background: var(--gold-light); }
+  .action-panel-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .action-panel-sub {
+    font-size: 11px;
+    color: var(--muted);
+  }
+  .action-item {
+    display: grid;
+    grid-template-columns: 44px 1fr auto;
+    gap: 10px;
+    align-items: start;
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--border);
+  }
+  .action-item:last-child { border-bottom: none; }
+  .action-item:hover { background: var(--cream); }
+
+  .action-product-name {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.3;
+    margin-bottom: 3px;
+  }
+  .action-detail-text {
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+  .action-clicks {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--ink);
+    text-align: right;
+    white-space: nowrap;
+  }
+  .action-clicks span { display: block; font-size: 10px; color: var(--muted); font-weight: 400; }
+
+  /* INSIGHT CALLOUT */
+  .insight-box {
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: 16px;
+    padding: 32px 36px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 24px;
+    align-items: center;
+    margin: 32px 0;
+  }
+  .insight-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 72px;
+    font-weight: 900;
+    color: var(--accent);
+    line-height: 1;
+  }
+  .insight-text h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    margin-bottom: 8px;
+  }
+  .insight-text p { font-size: 14px; color: rgba(248,245,240,0.65); line-height: 1.6; }
+
+  .insight-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 32px 0;
+  }
+  .insight-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+  }
+  .insight-card-label { font-size: 11px; color: var(--muted); margin-bottom: 6px; }
+  .insight-card-val {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .insight-card-desc { font-size: 12px; color: var(--muted); line-height: 1.4; }
+  .insight-card.accent-card { background: var(--accent); border-color: var(--accent); }
+  .insight-card.accent-card .insight-card-label { color: rgba(248,245,240,0.65); }
+  .insight-card.accent-card .insight-card-val { color: var(--paper); }
+  .insight-card.accent-card .insight-card-desc { color: rgba(248,245,240,0.75); }
+
+  /* FULL-WIDTH ACTION LIST */
+  .full-action-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  /* FOOTER */
+  .footer {
+    background: var(--ink);
+    color: rgba(248,245,240,0.4);
+    padding: 32px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+  }
+  .footer strong { color: var(--paper); }
+
+  @media (max-width: 800px) {
+    .header { padding: 40px 24px 32px; }
+    .header h1 { font-size: 36px; }
+    .header-stats { gap: 20px; }
+    .container { padding: 0 20px; }
+    .months-grid { grid-template-columns: 1fr; }
+    .action-columns { grid-template-columns: 1fr; }
+    .full-action-grid { grid-template-columns: 1fr; }
+    .insight-row { grid-template-columns: 1fr; }
+    .insight-box { grid-template-columns: 1fr; }
+    .footer { flex-direction: column; gap: 8px; text-align: center; padding: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-eyebrow">Mommy &amp; Me Collective · EchoTribe · URLgenius Intelligence Report</div>
+  <h1>6 Months of<br><span>Click Intelligence</span></h1>
+  <p class="header-sub">Oct 2025 – Mar 2026 · 10,731 active links · April 2026 action plan</p>
+  <div class="header-stats">
+    <div>
+      <div class="header-stat-val">4.44M</div>
+      <div class="header-stat-label">total clicks</div>
+    </div>
+    <div class="header-stat-divider"></div>
+    <div>
+      <div class="header-stat-val">10,731</div>
+      <div class="header-stat-label">active links</div>
+    </div>
+    <div class="header-stat-divider"></div>
+    <div>
+      <div class="header-stat-val">3</div>
+      <div class="header-stat-label">retailers tracked</div>
+    </div>
+    <div class="header-stat-divider"></div>
+    <div>
+      <div class="header-stat-val">18×</div>
+      <div class="header-stat-label">squishy click growth</div>
+    </div>
+  </div>
+</div>
+
+<!-- KEY FINDINGS -->
+<div class="section">
+  <div class="container">
+    <div class="section-eyebrow">Key findings</div>
+    <div class="section-title">What the data reveals</div>
+    <div class="section-desc">Three signals stand out that directly shape the April content and monetization strategy.</div>
+
+    <div class="insight-row">
+      <div class="insight-card accent-card">
+        <div class="insight-card-label">The biggest trend</div>
+        <div class="insight-card-val">18×</div>
+        <div class="insight-card-desc">Squishy/fidget clicks grew from 5K in October to 84K in March. This is a structural audience shift, not a trend.</div>
+      </div>
+      <div class="insight-card">
+        <div class="insight-card-label">Highest single product, all time</div>
+        <div class="insight-card-val">20,275</div>
+        <div class="insight-card-desc">Glitter Dumpling Squishy — March 2026. Created Mar 3, still climbing. Repost immediately.</div>
+      </div>
+      <div class="insight-card">
+        <div class="insight-card-label">Highest single month, any product</div>
+        <div class="insight-card-val">16,959</div>
+        <div class="insight-card-desc">Toddler Travel Bed — February 2026. Spring travel angle is perfect for April repost + boost.</div>
+      </div>
+    </div>
+
+    <div class="insight-box">
+      <div class="insight-number">40K</div>
+      <div class="insight-text">
+        <h3>Schylling / NeeDoh: the Creator Connections opportunity hiding in plain sight</h3>
+        <p>40,423 clicks across 37 links in 6 months — entirely from Steph's organic content. No CC campaigns activated, no Archer attribution. That's the gap. Search NeeDoh in the CC dashboard today, activate every campaign available, and check Archer catalog for SKUs. This single brand could add $500–2K/mo in flat fees on top of existing commissions.</p>
+      </div>
+    </div>
+
+    <div class="insight-row">
+      <div class="insight-card">
+        <div class="insight-card-label">Walmart EPC vs Amazon EPC</div>
+        <div class="insight-card-val">16×</div>
+        <div class="insight-card-desc">Walmart averages 5,948 clicks/link vs 375 for Amazon. 108 Walmart links vs 9,249 Amazon links — massive imbalance to close.</div>
+      </div>
+      <div class="insight-card">
+        <div class="insight-card-label">Duplicate links problem</div>
+        <div class="insight-card-val">1,903</div>
+        <div class="insight-card-desc">Products with multiple URLgenius links splitting clicks. Axolotl alone has 8 variants. Consolidate before April content push.</div>
+      </div>
+      <div class="insight-card">
+        <div class="insight-card-label">Evergreen workhorse</div>
+        <div class="insight-card-val">16,398</div>
+        <div class="insight-card-desc">Owala FreeSip total clicks — active across 4 of 6 months. Only product with true evergreen performance. Repost every month.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SQUISHY TREND CHART -->
+<div class="section">
+  <div class="container">
+    <div class="section-eyebrow">Category trend</div>
+    <div class="section-title">The squishy wave</div>
+    <div class="section-desc">Squishy, fidget, and sensory toys grew every single month. By March they represented 14% of all Amazon clicks — up from less than 1% in October.</div>
+
+    <div class="trend-chart">
+      <div class="trend-chart-title">Monthly clicks: total vs squishy/fidget category</div>
+      <div class="trend-chart-sub">Bar height scaled proportionally. Accent = squishy only.</div>
+      <div class="bars" id="bars"></div>
+      <div id="bar-labels" style="display:flex;gap:16px;"></div>
+      <div class="trend-legend">
+        <div class="legend-item"><div class="legend-dot" style="background:rgba(248,245,240,0.15)"></div>Total monthly clicks</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#c8440a"></div>Squishy/fidget clicks</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- MONTHLY TOP 3 -->
+<div class="section">
+  <div class="container">
+    <div class="section-eyebrow">Month by month</div>
+    <div class="section-title">Top 3 products per month</div>
+    <div class="section-desc">Ranked by total URLgenius clicks. Badges show April recommendation and monetization pathway.</div>
+
+    <div class="months-grid">
+
+      <!-- OCTOBER -->
+      <div class="month-card">
+        <div class="month-card-header">
+          <div class="month-name">October '25</div>
+          <div class="month-clicks-total"><strong>607K</strong> total clicks</div>
+        </div>
+        <div class="month-products">
+          <div class="month-product">
+            <div class="prod-rank r1">1</div>
+            <div style="width:40px;height:40px;border-radius:8px;background:#f5e8e2;display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;color:#c8440a;flex-shrink:0;">GD</div>
+            <div class="prod-info">
+              <div class="prod-name-text">Touchland Power Mist Hand Sanitizer 4-Set</div>
+              <div class="prod-badges"><span class="badge badge-cc">CC</span><span class="badge badge-archer">Archer</span><span class="badge badge-seasonal">skip April</span></div>
+            </div>
+            <div class="prod-clicks">4,022<span>clicks</span></div>
+          </div>
+          <div class="month-product">
+            <div class="prod-rank">2</div>
+            <div style="width:40px;height:40px;border-radius:8px;background:#f5edda;display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;color:#9a6f1a;flex-shrink:0;">ND</div>
+            <div class="prod-info">
+              <div class="prod-name-text">Disney Beauty &amp; the Beast Tea Cart Set</div>
+              <div class="prod-badges"><span class="badge badge-cc">CC</span><span class="badge badge-seasonal">skip April</span></div>
+            </div>
+            <div class="prod-clicks">3,014<span>clicks</span></div>
+          </div>
+          <div class="month-product">
+            <div class="prod-rank">3</div>
+            <div style="width:40px;height:40px;border-radius:8px;background:#f5edda;display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;color:#9a6f1a;flex-shrink:0;">ND</div>
+            <div class="prod-info">
+              <div class="prod-name-text">SpaLife Holiday Facial Masks 12-Pack</div>
+              <div class="prod-badges"><span class="badge badge-seasonal">skip April</span></div>
+            </div>
+            <div class="prod-clicks">2,949<span>clicks</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- NOVEMBER -->
+      <div class="month-card">
+        <div class="month-card-header">
+          <div class="month-name">November '25</div>
+          <div class="month-clicks-total"><strong>1.14M</strong> total clicks</div>
+        </div>
+        <div class="month-products">
+          <div class="month-product">
+            <div class="prod-rank r1">1</div>
+            <div style="width:40px;height:40px;border-radius:8px;background:#e0f0ec;display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;color:#0a6b5c;flex-shrink:0;">S2</div>
+            <div class="prod-info">
+              <div class="prod-name-text">Step2 Up &amp; Down Roller Coaster Ride-On</div>
+              <div class="prod-badges"><span class="badge badge-repost">repost</span><span class="badge badge-boost">boost</span><span class="badge badge-cc">CC</span></div>
+            </div>
+            <div class="prod-clicks">6,853<span>clicks</span></div>
+          </div>
+          <div class="month-product">
+            <div class="prod-rank">2</div>
+            <div style="width:40px;height:40px;border-radius:8px;background:#fbeaf0;display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;color:#993556;flex-shrink:0;">SJ</div>
+            <div class="prod-info">
+              <div class="prod-name-text">Sol de Janeiro Party of Two Beauty Gift Set</div>
+              <div class="prod-badges"><span class="badge badge-repost">repost</span><span class="badge badge-cc">CC</span><span class="badge badge-archer">Archer</span></div>
+            </div>
+            <div class="prod-clicks">5,923<span>clicks</span></div>
+          </div>
+          <div class="month-product">
+            <div class="prod-rank">3</div>
+            <div style="width:40px;height:40px;border-radius:8px;background:#e6f1fb;display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;color:#185FA5;flex-shrink:0;">OW</div>
+            <div class="prod-info">
+              <div class="prod-name-text">Owala FreeSip 32oz Insulated Water Bottle</div>
+              <div class="prod-badges"><span class="badge badge-repost">repost</span><span class="badge badge-boost">boost</span><span class="badge badge-evergreen">evergreen</span><span class="badge badge-cc">CC</span><span class="badge badge-archer">Archer</span></div>
+            </div>
+            <div class="prod-clicks">5,879<span>clicks</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DECEMBER -->
+      <div class="month-card">
+        <div class="month-card-header">
+          <div class="month-name">December '25</div>
+          <div class="month-clicks-total"><strong>842K</strong> total clicks</div>
+        </div>
+        <div class="month-products">
+          <div class="month-product">
+            <div class="prod-rank r1">1</div>
+            <div style="width:40px;height:40px;border-radius:8px;background:#f5edda;display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;color:#9a6f1a;flex-shrink:0;">ND</div>
+            <div class="prod-info">
+              <div class="prod-name-text">Elf on the Shelf Girl Scout 20th Anniversary</div>
+              <div class="prod-badges"><span class="badge badge-cc">CC</span><span class="badge badge-seasonal">skip April</span></div>
+            </div>
+            <div class="prod-clicks">7,355<span>clicks</span></div>
+          </div>
+          <div class="month-product">
+            <div class="prod-rank">2</div>
+            <div style="width:40px;height:40px;border-radius:8px;background:#f5e8e2;display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;color:#c8440a;flex-shrink:0;">AX</div>
+            <div class="prod-info">
+              <div class="prod-name-text">Animagic Axolotl Bubble Reef Squishy Toy</div>
+              <div class="prod-badges"><span class="badge badge-repost">repost</span><span class="badge badge-boost">boost</span><span class="badge badge-evergreen">evergreen</span><span class="badge badge-cc">CC</span><span class="badge badge-archer">Archer</span></div>
+            </div>
+            <div class="prod-clicks">6,515<span>clicks</span></div>
+          </div>
+          <div class="month-product">
+            <div class="prod-rank">3</div>
+            <div style="width:40px;height:40px;border-radius:8px;background:#f5e8e2;display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;color:#c8440a;flex-shrink:0;">AX</div>
+            <div class="prod-info">
+              <div class="prod-name-text">Bluey Kids Water Bottle 16.9oz with Straw</div>
+              <div class="prod-badges"><span class="badge badge-repost">repost</span><span class="badge badge-cc">CC</span></div>
+            </div>
+            <div class="prod-clicks">6,106<span>clicks</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- JANUARY -->
+      <div class="month-card">
+        <div class="month-card-header">
+          <div class="month-name">January '26</div>
+          <div class="month-clicks-total"><strong>718K</strong> total clicks</div>
+        </div>
+        <div class="month-products">
+          <div class="month-product">
+            <div class="prod-rank r1">1</div>
+            <div style="width:40px;height:40px;border-radius:8px;background:#f1efe8;display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;color:#444441;flex-shrink:0;">ST</div>
+            <div class="prod-info">
+              <div class="prod-name-text">16oz Disposable Stemless Wine Glasses 100pk</div>
+              <div class="prod-badges"><span class="badge badge-repost">repost</span><span class="badge badge-boost">boost</span></div>
+            </div>
+            <div class="prod-clicks">10,403<span>clicks</span></div>
+          </div>
+          <div class="month-product">
+            <div class="prod-rank">2</div>
+            <div style="width:40px;height:40px;border-radius:8px;background:#f1efe8;display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;color:#444441;flex-shrink:0;">ST</div>
+            <div class="prod-info">
+              <div class="prod-name-text">Stanley Madeleine Backpack Soft Cooler 20-Can</div>
+              <div class="prod-badges"><span class="badge badge-repost">repost</span><span class="badge badge-boost">boost</span><span class="badge badge-evergreen">evergreen</span><span class="badge badge-cc">CC</span><span class="badge badge-archer">Archer</span></div>
+            </div>
+            <div class="prod-clicks">10,322<span>clicks</span></div>
+          </div>
+          <div class="month-product">
+            <div class="prod-rank">3</div>
+            <div style="width:40px;height:40px;border-radius:8px;background:#e0f0ec;display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;color:#0a6b5c;flex-shrink:0;">HG</div>
+            <div class="prod-info">
+              <div class="prod-name-text">Huggies Skin Essentials Baby Wipes 560ct</div>
+              <div class="prod-badges"><span class="badge badge-repost">repost</span><span class="badge badge-cc">CC</span></div>
+            </div>
+            <div class="prod-clicks">10,074<span>clicks</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FEBRUARY -->
+      <div class="month-card">
+        <div class="month-card-header">
+          <div class="month-name">February '26</div>
+          <div class="month-clicks-total"><strong>543K</strong> total clicks</div>
+        </div>
+        <div class="month-products">
+          <div class="month-product">
+            <div class="prod-rank r1">1</div>
+            <div style="width:40px;height:40px;border-radius:8px;background:#ede8f5;display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;color:#4a2f7a;flex-shrink:0;">TB</div>
+            <div class="prod-info">
+              <div class="prod-name-text">Toddler Travel Bed Sandwich Style Foldable Crib</div>
+              <div class="prod-badges"><span class="badge badge-repost">repost</span><span class="badge badge-boost">boost</span><span class="badge badge-cc">CC</span><span class="badge badge-archer">Archer</span></div>
+            </div>
+            <div class="prod-clicks">16,959<span>clicks</span></div>
+          </div>
+          <div class="month-product">
+            <div class="prod-rank">2</div>
+            <div style="width:40px;height:40px;border-radius:8px;background:#f5e8e2;display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;color:#c8440a;flex-shrink:0;">CR</div>
+            <div class="prod-info">
+              <div class="prod-name-text">Crayola Crayon Tub Limited Edition 288ct</div>
+              <div class="prod-badges"><span class="badge badge-repost">repost</span><span class="badge badge-boost">boost</span><span class="badge badge-evergreen">evergreen</span><span class="badge badge-cc">CC</span></div>
+            </div>
+            <div class="prod-clicks">9,878<span>clicks</span></div>
+          </div>
+          <div class="month-product">
+            <div class="prod-rank">3</div>
+            <div style="width:40px;height:40px;border-radius:8px;background:#f5edda;display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;color:#9a6f1a;flex-shrink:0;">ND</div>
+            <div class="prod-info">
+              <div class="prod-name-text">Schylling NeeDoh Golden Egg Hunt (Easter)</div>
+              <div class="prod-badges"><span class="badge badge-repost">repost</span><span class="badge badge-boost">boost</span><span class="badge badge-cc">CC</span><span class="badge badge-archer">Archer</span></div>
+            </div>
+            <div class="prod-clicks">4,326<span>clicks</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MARCH -->
+      <div class="month-card" style="border: 2px solid var(--accent);">
+        <div class="month-card-header" style="background: var(--accent-light);">
+          <div class="month-name">March '26</div>
+          <div class="month-clicks-total"><strong>594K</strong> · squishy surge</div>
+        </div>
+        <div class="month-products">
+          <div class="month-product">
+            <div class="prod-rank r1">1</div>
+            <div style="width:40px;height:40px;border-radius:8px;background:#f5e8e2;display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;color:#c8440a;flex-shrink:0;">GD</div>
+            <div class="prod-info">
+              <div class="prod-name-text">2026 Glitter Dumpling Squishy (White)</div>
+              <div class="prod-badges"><span class="badge badge-repost">repost</span><span class="badge badge-boost">boost</span><span class="badge badge-cc">CC</span><span class="badge badge-archer">Archer</span></div>
+            </div>
+            <div class="prod-clicks">20,275<span>#1 all-time</span></div>
+          </div>
+          <div class="month-product">
+            <div class="prod-rank">2</div>
+            <div style="width:40px;height:40px;border-radius:8px;background:#f5e8e2;display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;color:#c8440a;flex-shrink:0;">AX</div>
+            <div class="prod-info">
+              <div class="prod-name-text">Axolotl Squishy Glitter Fidget Toy (Blue)</div>
+              <div class="prod-badges"><span class="badge badge-repost">repost</span><span class="badge badge-boost">boost</span><span class="badge badge-cc">CC</span><span class="badge badge-archer">Archer</span></div>
+            </div>
+            <div class="prod-clicks">11,804<span>8 variants — consolidate</span></div>
+          </div>
+          <div class="month-product">
+            <div class="prod-rank">3</div>
+            <div style="width:40px;height:40px;border-radius:8px;background:#f5edda;display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;color:#9a6f1a;flex-shrink:0;">NC</div>
+            <div class="prod-info">
+              <div class="prod-name-text">Schylling NeeDoh Nice Cube Swirl 2-Pack</div>
+              <div class="prod-badges"><span class="badge badge-repost">repost</span><span class="badge badge-boost">boost</span><span class="badge badge-cc">CC</span><span class="badge badge-archer">Archer</span></div>
+            </div>
+            <div class="prod-clicks">10,020<span>created Mar 14 — climbing</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- APRIL ACTION PLAN -->
+<div class="section">
+  <div class="container">
+    <div class="section-eyebrow">April 2026 action plan</div>
+    <div class="section-title">What to do right now</div>
+    <div class="section-desc">Four action tracks sorted by priority. Each product chosen because click data shows proven demand before any spend.</div>
+
+    <div class="full-action-grid">
+
+      <!-- REPOST -->
+      <div class="action-panel">
+        <div class="action-panel-header">
+          <div class="action-panel-icon icon-repost">↺</div>
+          <div>
+            <div class="action-panel-title">Repost — carry over momentum</div>
+            <div class="action-panel-sub">Proven organic performers. New caption, same link.</div>
+          </div>
+        </div>
+        <div class="action-item">
+          <div style="width:44px;height:44px;border-radius:8px;background:#f5e8e2;display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;color:#c8440a;flex-shrink:0;">GD</div>
+          <div>
+            <div class="action-product-name">Glitter Dumpling Squishy</div>
+            <div class="action-detail-text">Easter basket stuffer framing through Apr 20. Still climbing.</div>
+          </div>
+          <div class="action-clicks">20,275<span>Mar clicks</span></div>
+        </div>
+        <div class="action-item">
+          <div style="width:44px;height:44px;border-radius:8px;background:#f5edda;display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;color:#9a6f1a;flex-shrink:0;">ND</div>
+          <div>
+            <div class="action-product-name">NeeDoh Dream Drop</div>
+            <div class="action-detail-text">Created Mar 24 — only days old. Full momentum carry.</div>
+          </div>
+          <div class="action-clicks">8,202<span>Mar clicks</span></div>
+        </div>
+        <div class="action-item">
+          <div style="width:44px;height:44px;border-radius:8px;background:#e6f1fb;display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;color:#185FA5;flex-shrink:0;">OW</div>
+          <div>
+            <div class="action-product-name">Owala FreeSip (all sizes)</div>
+            <div class="action-detail-text">Active 4 months. Spring/outdoor framing for April.</div>
+          </div>
+          <div class="action-clicks">16,398<span>all-time</span></div>
+        </div>
+        <div class="action-item">
+          <div style="width:44px;height:44px;border-radius:8px;background:#ede8f5;display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;color:#4a2f7a;flex-shrink:0;">TB</div>
+          <div>
+            <div class="action-product-name">Toddler Travel Bed</div>
+            <div class="action-detail-text">Spring travel / vacation framing is perfect for April.</div>
+          </div>
+          <div class="action-clicks">16,959<span>Feb clicks</span></div>
+        </div>
+        <div class="action-item">
+          <div style="width:44px;height:44px;border-radius:8px;background:#f5edda;display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;color:#9a6f1a;flex-shrink:0;">ND</div>
+          <div>
+            <div class="action-product-name">NeeDoh Golden Egg Hunt</div>
+            <div class="action-detail-text">Easter Apr 20 — direct relevance for 3+ more weeks.</div>
+          </div>
+          <div class="action-clicks">4,326<span>Feb clicks</span></div>
+        </div>
+        <div class="action-item">
+          <div style="width:44px;height:44px;border-radius:8px;background:#f5e8e2;display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;color:#c8440a;flex-shrink:0;">CR</div>
+          <div>
+            <div class="action-product-name">Crayola Crayon Tub + Twistables</div>
+            <div class="action-detail-text">Spring break + rainy day activity framing.</div>
+          </div>
+          <div class="action-clicks">9,878<span>Feb clicks</span></div>
+        </div>
+      </div>
+
+      <!-- BOOST -->
+      <div class="action-panel">
+        <div class="action-panel-header">
+          <div class="action-panel-icon icon-boost">↑</div>
+          <div>
+            <div class="action-panel-title">Boost with paid — highest ROI</div>
+            <div class="action-panel-sub">Only boost proven organic performers. Demand already validated.</div>
+          </div>
+        </div>
+        <div class="action-item">
+          <div style="width:44px;height:44px;border-radius:8px;background:#f5e8e2;display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;color:#c8440a;flex-shrink:0;">GD</div>
+          <div>
+            <div class="action-product-name">Glitter Dumpling Squishy</div>
+            <div class="action-detail-text">Lowest-risk boost. Wide audience + Easter timing. $50–100 test.</div>
+          </div>
+          <div class="action-clicks">20,275<span>organic demand</span></div>
+        </div>
+        <div class="action-item">
+          <div style="width:44px;height:44px;border-radius:8px;background:#ede8f5;display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;color:#4a2f7a;flex-shrink:0;">TB</div>
+          <div>
+            <div class="action-product-name">Toddler Travel Bed</div>
+            <div class="action-detail-text">High AOV = higher commission per click. Best $200+ boost candidate.</div>
+          </div>
+          <div class="action-clicks">16,959<span>Feb peak</span></div>
+        </div>
+        <div class="action-item">
+          <div style="width:44px;height:44px;border-radius:8px;background:#f1efe8;display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;color:#444441;flex-shrink:0;">ST</div>
+          <div>
+            <div class="action-product-name">Stanley Madeleine Cooler Bag</div>
+            <div class="action-detail-text">Spring framing. Premium AOV. Archer may co-fund. $50–100 test.</div>
+          </div>
+          <div class="action-clicks">10,322<span>Jan peak</span></div>
+        </div>
+        <div class="action-item">
+          <div style="width:44px;height:44px;border-radius:8px;background:#f5e8e2;display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;color:#c8440a;flex-shrink:0;">CR</div>
+          <div>
+            <div class="action-product-name">Crayola Crayon Tub</div>
+            <div class="action-detail-text">Pair boost with CC campaign activation for dual revenue stream.</div>
+          </div>
+          <div class="action-clicks">9,878<span>Feb clicks</span></div>
+        </div>
+        <div class="action-item">
+          <div style="width:44px;height:44px;border-radius:8px;background:#f5e8e2;display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;color:#c8440a;flex-shrink:0;">AX</div>
+          <div>
+            <div class="action-product-name">Axolotl Squishy (Blue)</div>
+            <div class="action-detail-text">Consolidate 8 duplicate links first, then boost the canonical one.</div>
+          </div>
+          <div class="action-clicks">11,804<span>Mar clicks</span></div>
+        </div>
+        <div class="action-item">
+          <div style="width:44px;height:44px;border-radius:8px;background:#e0f0ec;display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;color:#0a6b5c;flex-shrink:0;">S2</div>
+          <div>
+            <div class="action-product-name">Step2 Roller Coaster</div>
+            <div class="action-detail-text">Outdoor play season begins. Spring weather + kids outside angle.</div>
+          </div>
+          <div class="action-clicks">6,853<span>Nov peak</span></div>
+        </div>
+      </div>
+
+      <!-- CREATOR CONNECTIONS -->
+      <div class="action-panel">
+        <div class="action-panel-header">
+          <div class="action-panel-icon icon-cc">CC</div>
+          <div>
+            <div class="action-panel-title">Creator Connections — activate now</div>
+            <div class="action-panel-sub">Search Amazon CC dashboard for each brand. Activate all available campaigns.</div>
+          </div>
+        </div>
+        <div class="action-item">
+          <div style="width:44px;height:44px;border-radius:8px;background:#f5edda;display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;color:#9a6f1a;flex-shrink:0;">NC</div>
+          <div>
+            <div class="action-product-name">Schylling / NeeDoh</div>
+            <div class="action-detail-text">40K clicks proves demand. Search all NeeDoh SKUs in CC — priority #1. Est. $500–2K/mo in flat fees.</div>
+          </div>
+          <div class="action-clicks">40,423<span>6-mo total</span></div>
+        </div>
+        <div class="action-item">
+          <div style="width:44px;height:44px;border-radius:8px;background:#e0f0ec;display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;color:#0a6b5c;flex-shrink:0;">HG</div>
+          <div>
+            <div class="action-product-name">Huggies (Kimberly-Clark)</div>
+            <div class="action-detail-text">K-C runs CC aggressively in baby category. Check Huggies + Natural Care SKUs.</div>
+          </div>
+          <div class="action-clicks">10,074<span>Jan clicks</span></div>
+        </div>
+        <div class="action-item">
+          <div style="width:44px;height:44px;border-radius:8px;background:#f5e8e2;display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;color:#c8440a;flex-shrink:0;">CR</div>
+          <div>
+            <div class="action-product-name">Crayola</div>
+            <div class="action-detail-text">Spring campaigns likely live now through Aug. Search Crayon Tub + Twistables SKUs.</div>
+          </div>
+          <div class="action-clicks">9,878<span>Feb clicks</span></div>
+        </div>
+        <div class="action-item">
+          <div style="width:44px;height:44px;border-radius:8px;background:#e6f1fb;display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;color:#185FA5;flex-shrink:0;">OW</div>
+          <div>
+            <div class="action-product-name">Owala + Stanley + BrüMate</div>
+            <div class="action-detail-text">Premium drinkware brands run CC year-round. Spring season = active campaigns.</div>
+          </div>
+          <div class="action-clicks">16,398<span>Owala all-time</span></div>
+        </div>
+        <div class="action-item">
+          <div style="width:44px;height:44px;border-radius:8px;background:#e0f0ec;display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;color:#0a6b5c;flex-shrink:0;">S2</div>
+          <div>
+            <div class="action-product-name">Step2 / Fisher-Price / Mattel</div>
+            <div class="action-detail-text">Outdoor play season = spring CC campaigns live now. Little People + Roller Coaster SKUs.</div>
+          </div>
+          <div class="action-clicks">6,853<span>Step2 Nov</span></div>
+        </div>
+      </div>
+
+      <!-- ARCHER / LEVANTA -->
+      <div class="action-panel">
+        <div class="action-panel-header">
+          <div class="action-panel-icon icon-archer">A</div>
+          <div>
+            <div class="action-panel-title">Archer / Levanta — brand-sponsored links</div>
+            <div class="action-panel-sub">Search Archer catalog for each brand. Switch future links to Archer for higher payout.</div>
+          </div>
+        </div>
+        <div class="action-item">
+          <div style="width:44px;height:44px;border-radius:8px;background:#f5edda;display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;color:#9a6f1a;flex-shrink:0;">NC</div>
+          <div>
+            <div class="action-product-name">Schylling / NeeDoh</div>
+            <div class="action-detail-text">Prime Archer target. If listed, switch all future squishy links to Archer for higher commission.</div>
+          </div>
+          <div class="action-clicks">40,423<span>proven demand</span></div>
+        </div>
+        <div class="action-item">
+          <div style="width:44px;height:44px;border-radius:8px;background:#fbeaf0;display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;color:#993556;flex-shrink:0;">SJ</div>
+          <div>
+            <div class="action-product-name">Sol de Janeiro</div>
+            <div class="action-detail-text">Premium beauty brand, very active in Archer/Levanta. High likelihood of being listed.</div>
+          </div>
+          <div class="action-clicks">5,923<span>Nov clicks</span></div>
+        </div>
+        <div class="action-item">
+          <div style="width:44px;height:44px;border-radius:8px;background:#f1efe8;display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;color:#444441;flex-shrink:0;">ST</div>
+          <div>
+            <div class="action-product-name">Stanley + Owala + BrüMate</div>
+            <div class="action-detail-text">All three run brand-funded programs. High AOV = meaningful commission uplift vs Associates rate.</div>
+          </div>
+          <div class="action-clicks">16,398<span>Owala all-time</span></div>
+        </div>
+        <div class="action-item">
+          <div style="width:44px;height:44px;border-radius:8px;background:#ede8f5;display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;color:#4a2f7a;flex-shrink:0;">TB</div>
+          <div>
+            <div class="action-product-name">Toddler Travel Bed (brand)</div>
+            <div class="action-detail-text">16,959 clicks is strong proof for a brand-funded conversation. Check Archer catalog now.</div>
+          </div>
+          <div class="action-clicks">16,959<span>Feb clicks</span></div>
+        </div>
+        <div class="action-item">
+          <div style="width:44px;height:44px;border-radius:8px;background:#f5e8e2;display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;color:#c8440a;flex-shrink:0;">GD</div>
+          <div>
+            <div class="action-product-name">Touchland (spring launch)</div>
+            <div class="action-detail-text">October seasonal hit — spring scent line likely live now. Search Archer for 2026 spring SKUs.</div>
+          </div>
+          <div class="action-clicks">4,022<span>Oct clicks</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div>Prepared by <strong>EchoTribe</strong> for Mommy &amp; Me Collective · April 2026</div>
+  <div>URLgenius click data: Oct 2025 – Mar 2026 · 10,731 links · 4.44M clicks</div>
+</div>
+
+<script>
+  const months = ['Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar'];
+  const totals = [607058, 1135930, 841735, 718237, 542812, 594167];
+  const squishy = [4999, 10629, 21128, 16996, 27089, 84389];
+  const maxTotal = Math.max(...totals);
+
+  const barsEl = document.getElementById('bars');
+  const labelsEl = document.getElementById('bar-labels');
+
+  months.forEach((m, i) => {
+    const totalH = Math.round((totals[i] / maxTotal) * 100);
+    const squishyH = Math.round((squishy[i] / maxTotal) * 100);
+    const pct = Math.round(squishy[i]/totals[i]*100);
+
+    const group = document.createElement('div');
+    group.className = 'bar-group';
+    group.innerHTML = `
+      <div class="bar-val squishy-val">${(squishy[i]/1000).toFixed(0)}K</div>
+      <div class="bar-wrap">
+        <div style="width:100%;display:flex;gap:3px;align-items:flex-end;height:100px;">
+          <div class="bar total" style="height:${totalH}px;flex:1;"></div>
+          <div class="bar squishy" style="height:${squishyH}px;flex:1;"></div>
+        </div>
+      </div>
+      <div class="bar-month">${m}</div>
+    `;
+    barsEl.appendChild(group);
+  });
+</script>
+
+</body>
+</html>
