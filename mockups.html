@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creator Connections — Tier 1 & 2 Brand Mockups</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --coral: #E8644A;
+    --teal: #3DBFB8;
+    --cream: #FFF8F3;
+    --ink: #2C2825;
+    --soft-pink: #FFD6CE;
+    --soft-blue: #C8EBF0;
+    --soft-yellow: #FFF5C0;
+    --soft-green: #D4F5EF;
+    --white: #FFFFFF;
+    --gray: #F0EEEB;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: #EDEBE7;
+    color: var(--ink);
+    min-height: 100vh;
+  }
+
+  /* ─── PAGE HEADER ─── */
+  .page-header {
+    background: var(--ink);
+    padding: 28px 40px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .page-header h1 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 22px;
+    color: var(--cream);
+    letter-spacing: 0.3px;
+  }
+  .page-header .tag {
+    background: var(--coral);
+    color: white;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  /* ─── SECTION LABEL ─── */
+  .brand-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 48px 24px 16px;
+  }
+  .brand-section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+  .brand-badge {
+    font-family: 'Fredoka One', cursive;
+    font-size: 13px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    letter-spacing: 0.3px;
+  }
+  .badge-t1 { background: #D6F4E8; color: #1A7A3C; }
+  .badge-t2 { background: #D6EEF4; color: #1A4A6A; }
+
+  .brand-section-header h2 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 30px;
+    color: var(--ink);
+  }
+  .brand-section-header .meta {
+    font-size: 13px;
+    color: #888;
+    font-weight: 600;
+  }
+
+  /* ─── 2-COL GRID ─── */
+  .mockup-grid {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 24px;
+    margin-bottom: 60px;
+  }
+  @media (max-width: 860px) { .mockup-grid { grid-template-columns: 1fr; } }
+
+  /* ─── PHONE FRAME ─── */
+  .phone-frame {
+    background: var(--ink);
+    border-radius: 40px;
+    padding: 14px 12px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+    width: 380px;
+    align-self: start;
+    position: relative;
+  }
+  .phone-notch {
+    width: 80px;
+    height: 22px;
+    background: var(--ink);
+    border-radius: 0 0 16px 16px;
+    margin: 0 auto 10px;
+    position: relative;
+    z-index: 2;
+  }
+  .phone-screen {
+    background: white;
+    border-radius: 28px;
+    overflow: hidden;
+    min-height: 560px;
+  }
+
+  /* ─── FACEBOOK POST MOCKUP ─── */
+  .fb-post {
+    background: white;
+    font-family: 'Nunito', sans-serif;
+  }
+  .fb-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 14px 10px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .fb-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--coral), #F4A280);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fredoka One', cursive;
+    font-size: 16px;
+    color: white;
+    flex-shrink: 0;
+  }
+  .fb-meta { flex: 1; }
+  .fb-name {
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+  .fb-sub {
+    font-size: 10px;
+    color: #888;
+    margin-top: 1px;
+  }
+  .fb-caption {
+    padding: 10px 14px 8px;
+    font-size: 12px;
+    line-height: 1.6;
+    color: #333;
+  }
+  .fb-caption .brand-tag { color: #1877F2; font-weight: 700; }
+  .fb-caption .emoji { font-size: 13px; }
+  .fb-product-collage {
+    width: 100%;
+    background: var(--soft-yellow);
+    position: relative;
+    overflow: hidden;
+  }
+  .fb-collage-inner {
+    display: grid;
+    gap: 3px;
+    padding: 3px;
+  }
+  .collage-2x2 { grid-template-columns: 1fr 1fr; grid-template-rows: 140px 140px; }
+  .collage-hero { grid-template-columns: 1fr 1fr; grid-template-rows: 180px 100px; }
+  .collage-cell {
+    background: #ddd;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: #888;
+    position: relative;
+    border-radius: 4px;
+  }
+  .collage-cell img { width: 100%; height: 100%; object-fit: cover; }
+  .collage-cell.span2 { grid-column: span 2; }
+  .collage-cell.main { grid-row: span 2; }
+  .collage-overlay {
+    position: absolute;
+    bottom: 6px;
+    right: 6px;
+    background: rgba(0,0,0,0.65);
+    color: white;
+    font-size: 9px;
+    font-weight: 800;
+    padding: 3px 7px;
+    border-radius: 8px;
+    backdrop-filter: blur(4px);
+  }
+  .price-badge {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    background: var(--coral);
+    color: white;
+    font-size: 9px;
+    font-weight: 900;
+    padding: 3px 7px;
+    border-radius: 8px;
+  }
+  .commission-ribbon {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    background: #1A7A3C;
+    color: white;
+    font-size: 8px;
+    font-weight: 900;
+    padding: 3px 6px;
+    border-radius: 6px;
+  }
+  .fb-cta-bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 14px;
+    background: var(--cream);
+    border-top: 1px solid #eee;
+  }
+  .fb-cta-btn {
+    flex: 1;
+    background: var(--coral);
+    color: white;
+    font-family: 'Fredoka One', cursive;
+    font-size: 12px;
+    padding: 9px 0;
+    border-radius: 20px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+  }
+  .fb-link-preview {
+    background: #f8f8f8;
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin: 0 14px 10px;
+    border-left: 3px solid var(--coral);
+    font-size: 10px;
+    color: #555;
+  }
+  .fb-link-preview strong { display: block; color: var(--ink); font-size: 11px; margin-bottom: 2px; }
+
+  /* ─── LANDING PAGE ─── */
+  .landing-frame {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.10);
+    align-self: start;
+  }
+  .lp-header {
+    padding: 20px 24px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 2px solid #f5f5f5;
+  }
+  .lp-logo {
+    font-family: 'Fredoka One', cursive;
+    font-size: 18px;
+  }
+  .lp-logo span { color: var(--coral); }
+  .lp-header-right {
+    margin-left: auto;
+    font-size: 11px;
+    color: #888;
+    font-weight: 600;
+  }
+
+  .lp-hero {
+    padding: 20px 24px 16px;
+  }
+  .lp-eyebrow {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--coral);
+    margin-bottom: 6px;
+  }
+  .lp-hero h3 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 24px;
+    color: var(--ink);
+    line-height: 1.2;
+    margin-bottom: 6px;
+  }
+  .lp-hero p {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.5;
+  }
+  .lp-promo-bar {
+    margin: 0 24px 16px;
+    background: linear-gradient(90deg, var(--coral), #F4956A);
+    border-radius: 12px;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+  }
+  .lp-promo-bar .promo-icon { font-size: 18px; }
+  .lp-promo-bar .promo-text { font-size: 11px; font-weight: 800; }
+  .lp-promo-bar .promo-sub { font-size: 10px; opacity: 0.85; }
+
+  .lp-products {
+    padding: 0 24px 20px;
+  }
+  .lp-section-label {
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #aaa;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .lp-section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #eee;
+  }
+
+  .product-card-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+    background: var(--gray);
+    border-radius: 14px;
+    padding: 10px 12px;
+    cursor: pointer;
+    transition: background 0.15s;
+    text-decoration: none;
+    color: inherit;
+  }
+  .product-card-row:hover { background: #e8e6e2; }
+  .pc-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    background: #ddd;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+  }
+  .pc-img img { width: 100%; height: 100%; object-fit: cover; border-radius: 10px; }
+  .pc-info { flex: 1; min-width: 0; }
+  .pc-name {
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--ink);
+    line-height: 1.3;
+    margin-bottom: 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .pc-meta {
+    font-size: 10px;
+    color: #888;
+    margin-bottom: 4px;
+  }
+  .pc-price-row { display: flex; align-items: center; gap: 6px; }
+  .pc-price {
+    font-size: 13px;
+    font-weight: 900;
+    color: var(--coral);
+  }
+  .pc-retailer {
+    font-size: 9px;
+    font-weight: 800;
+    background: var(--teal);
+    color: white;
+    padding: 2px 7px;
+    border-radius: 10px;
+  }
+  .pc-arrow {
+    font-size: 16px;
+    color: var(--coral);
+    flex-shrink: 0;
+  }
+  .pc-hot {
+    font-size: 9px;
+    background: var(--soft-yellow);
+    color: #B45309;
+    font-weight: 800;
+    padding: 2px 7px;
+    border-radius: 10px;
+  }
+
+  .lp-footer-cta {
+    margin: 0 24px 20px;
+    background: var(--ink);
+    border-radius: 14px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+  }
+  .lp-footer-cta .cta-text { font-size: 11px; line-height: 1.4; flex: 1; }
+  .lp-footer-cta .cta-text strong { font-size: 13px; display: block; margin-bottom: 2px; }
+  .lp-footer-cta .cta-btn {
+    background: var(--coral);
+    color: white;
+    font-family: 'Fredoka One', cursive;
+    font-size: 12px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* ─── DIVIDER ─── */
+  .brand-divider {
+    max-width: 1200px;
+    margin: 0 auto 0;
+    padding: 0 24px;
+  }
+  .brand-divider hr {
+    border: none;
+    border-top: 2px dashed #D8D5D0;
+    margin-bottom: 40px;
+  }
+
+  /* ─── LEGEND ─── */
+  .legend {
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    padding: 0 24px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #666;
+  }
+  .legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+
+  /* product image placeholder with emoji */
+  .emoji-img {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+  }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <div class="fb-logo" style="font-family:'Fredoka One',cursive;color:var(--coral);font-size:20px;">Mommy&amp;Me</div>
+  <div class="tag">Creator Connections Mockups</div>
+  <div style="color:#888;font-size:12px;margin-left:auto;">Tier 1 &amp; Tier 2 Brands · Organic Post + Shoppable Landing Page</div>
+</div>
+
+<!-- ════════════════════════════════════════════════
+     BRAND 1: MONSTER JAM — TIER 1
+════════════════════════════════════════════════ -->
+<div class="brand-section">
+  <div class="brand-section-header">
+    <span class="brand-badge badge-t1">🔥 Tier 1 — Triple Match</span>
+    <h2>Monster Jam</h2>
+    <span class="meta">$6.2K AMZ rev · 361 units · $149K CC budget · 12–15% commission · Archer: 2 SKUs</span>
+  </div>
+
+  <div class="mockup-grid">
+
+    <!-- PHONE: FB POST -->
+    <div>
+      <div style="font-size:11px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:#888;margin-bottom:10px;">📱 Organic Facebook Post</div>
+      <div class="phone-frame">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <div class="fb-post">
+            <div class="fb-header">
+              <div class="fb-avatar">M</div>
+              <div class="fb-meta">
+                <div class="fb-name">Mommy &amp; Me Collective 🤝</div>
+                <div class="fb-sub">Everyday with Steph · Sponsored</div>
+              </div>
+              <div style="font-size:18px;color:#ccc;">···</div>
+            </div>
+
+            <div class="fb-caption">
+              <span class="emoji">🏁</span> ok moms of boys (and girls who love trucks!) — Monster Jam just dropped some INSANE deals and I had to share 😍<br><br>
+              My son literally screamed when he opened the 2-pack. The wash-to-reveal trucks are SO fun — you freeze them in the freezer and they change color <span class="emoji">🤯</span><br><br>
+              All three are under $20 and perfect for birthdays or just a surprise. Links below!! <span class="emoji">👇</span>
+              <br><br>
+              <span class="brand-tag">#MonsterJam #ToysForBoys #KidsGifts #MommyAndMeFinds</span>
+            </div>
+
+            <div class="fb-product-collage">
+              <div class="fb-collage-inner collage-hero">
+                <div class="collage-cell main" style="background:#1a1a2e;">
+                  <div class="emoji-img">🚛</div>
+                  <div class="price-badge">$17.99</div>
+                  <div class="commission-ribbon">12% CC</div>
+                  <div class="collage-overlay">Mystery Mudders 2-Pack</div>
+                </div>
+                <div class="collage-cell" style="background:#16213e;">
+                  <div class="emoji-img">🏔️</div>
+                  <div class="collage-overlay">Mini Jam Set</div>
+                </div>
+                <div class="collage-cell" style="background:#0f3460;">
+                  <div class="emoji-img">🔥</div>
+                  <div class="collage-overlay">Megalodon Chomper</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="fb-link-preview">
+              <strong>Shop All 3 Monster Jam Picks →</strong>
+              mommyandmecollective.com/shop/monster-jam
+            </div>
+
+            <div class="fb-cta-bar">
+              <button class="fb-cta-btn">🛒 Shop the Picks</button>
+              <div style="font-size:18px;">👍 💬 ↗️</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:12px;font-size:11px;color:#888;font-weight:700;padding:0 4px;">
+        ✏️ <em>Voice note:</em> Casual, emoji-light, story-first. Steph's son as social proof. CC link on the collage image + caption link.
+      </div>
+    </div>
+
+    <!-- LANDING PAGE -->
+    <div>
+      <div style="font-size:11px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:#888;margin-bottom:10px;">🖥️ Shoppable Landing Page — /shop/monster-jam</div>
+      <div class="landing-frame">
+        <div class="lp-header">
+          <div class="lp-logo">Mommy<span>&amp;</span>Me</div>
+          <div style="font-size:11px;color:#aaa;">Steph's Picks</div>
+          <div class="lp-header-right">mommyandmecollective.com</div>
+        </div>
+
+        <div class="lp-hero" style="background:linear-gradient(135deg,#1a1a2e,#0f3460);color:white;padding:24px 24px 20px;">
+          <div class="lp-eyebrow" style="color:#F4A280;">🏁 Steph's Top Picks</div>
+          <h3 style="color:white;font-size:26px;">Monster Jam Trucks<br>Under $20 🚛</h3>
+          <p style="color:rgba(255,255,255,0.75);">My son is OBSESSED. These are the exact ones I bought — ranked by how much my kids actually played with them.</p>
+        </div>
+
+        <div style="padding:12px 24px 8px;">
+          <div class="lp-promo-bar">
+            <div class="promo-icon">🎉</div>
+            <div>
+              <div class="promo-text">12% commission via Creator Connections</div>
+              <div class="promo-sub">Shop through these links to support Steph!</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lp-products">
+          <div class="lp-section-label">Steph's top 3</div>
+
+          <a class="product-card-row" href="#">
+            <div class="pc-img"><div class="emoji-img">🚛</div></div>
+            <div class="pc-info">
+              <div class="pc-name">Mystery Mudders 2-Pack</div>
+              <div class="pc-meta">Wash to reveal color-change • 4.8 ⭐</div>
+              <div class="pc-price-row">
+                <span class="pc-price">$17.39</span>
+                <span class="pc-retailer">Amazon</span>
+                <span class="pc-hot">🔥 #1 pick</span>
+              </div>
+            </div>
+            <div class="pc-arrow">›</div>
+          </a>
+
+          <a class="product-card-row" href="#">
+            <div class="pc-img"><div class="emoji-img">🏔️</div></div>
+            <div class="pc-info">
+              <div class="pc-name">Mini Jam — Megalodon Set</div>
+              <div class="pc-meta">Mad Hog Chomper • Fun cleanup storage</div>
+              <div class="pc-price-row">
+                <span class="pc-price">$17.14</span>
+                <span class="pc-retailer">Amazon</span>
+              </div>
+            </div>
+            <div class="pc-arrow">›</div>
+          </a>
+
+          <a class="product-card-row" href="#">
+            <div class="pc-img"><div class="emoji-img">🔥</div></div>
+            <div class="pc-info">
+              <div class="pc-name">Track Set + 2 Toy Trucks</div>
+              <div class="pc-meta">Oversized Skelesaurus • Charge &amp; Chase</div>
+              <div class="pc-price-row">
+                <span class="pc-price">$16.41</span>
+                <span class="pc-retailer">Amazon</span>
+                <span class="pc-hot">💯 Best value</span>
+              </div>
+            </div>
+            <div class="pc-arrow">›</div>
+          </a>
+        </div>
+
+        <div class="lp-footer-cta">
+          <div class="cta-text">
+            <strong>Want more toy deals?</strong>
+            Join Steph's Facebook group for daily finds 👇
+          </div>
+          <div class="cta-btn">Join Group</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div><!-- /monster jam section -->
+
+<div class="brand-divider"><hr></div>
+
+<!-- ════════════════════════════════════════════════
+     BRAND 2: BARBIE — TIER 2
+════════════════════════════════════════════════ -->
+<div class="brand-section">
+  <div class="brand-section-header">
+    <span class="brand-badge badge-t2">⚡ Tier 2 — CC + Archer + Amazon</span>
+    <h2>Barbie</h2>
+    <span class="meta">$1.9K direct + $11.6K DreamHouse · 148 units · $82.6K CC budget · 12% commission · Archer: 5 SKUs</span>
+  </div>
+
+  <div class="mockup-grid">
+
+    <!-- PHONE: FB POST -->
+    <div>
+      <div style="font-size:11px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:#888;margin-bottom:10px;">📱 Organic Facebook Post</div>
+      <div class="phone-frame">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <div class="fb-post">
+            <div class="fb-header">
+              <div class="fb-avatar" style="background:linear-gradient(135deg,#FF69B4,#FFB6C1);">M</div>
+              <div class="fb-meta">
+                <div class="fb-name">Mommy &amp; Me Collective 🤝</div>
+                <div class="fb-sub">Everyday with Steph · Just now</div>
+              </div>
+              <div style="font-size:18px;color:#ccc;">···</div>
+            </div>
+
+            <div class="fb-caption">
+              <span class="emoji">✨</span> Barbie season is REAL in this house and honestly? no complaints 💕<br><br>
+              The DreamHouse is still the #1 gift I recommend — it goes on sale a few times a year and when it does, grab it. 75+ accessories and the elevator actually lights up <span class="emoji">🏠</span><br><br>
+              Also sharing the Hatch &amp; Gather farm set which is SO cute and way more unique than the usual picks. Links are in my shop!
+              <br><br>
+              <span class="brand-tag">#Barbie #GiftsForGirls #KidsToys #MommyAndMeFinds</span>
+            </div>
+
+            <div class="fb-product-collage">
+              <div class="fb-collage-inner collage-2x2">
+                <div class="collage-cell" style="background:#FFD6E7;">
+                  <div class="emoji-img">🏠</div>
+                  <div class="price-badge">$199.99</div>
+                  <div class="commission-ribbon">12% CC</div>
+                  <div class="collage-overlay">DreamHouse</div>
+                </div>
+                <div class="collage-cell" style="background:#FFE4F0;">
+                  <div class="emoji-img">🐔</div>
+                  <div class="collage-overlay">Egg Farm</div>
+                </div>
+                <div class="collage-cell" style="background:#F8D7E8;">
+                  <div class="emoji-img">🐶</div>
+                  <div class="collage-overlay">Pet Boutique</div>
+                </div>
+                <div class="collage-cell" style="background:#FCE4EC;">
+                  <div class="emoji-img">🚐</div>
+                  <div class="collage-overlay">Dream Camper</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="fb-link-preview">
+              <strong>Steph's Barbie Gift Guide →</strong>
+              mommyandmecollective.com/shop/barbie
+            </div>
+
+            <div class="fb-cta-bar">
+              <button class="fb-cta-btn" style="background:#D63384;">💕 Shop Barbie Picks</button>
+              <div style="font-size:18px;">👍 💬 ↗️</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:12px;font-size:11px;color:#888;font-weight:700;padding:0 4px;">
+        ✏️ <em>Voice note:</em> Leans into the mom angle — recommending to other moms, not just selling. DreamHouse as proven anchor (37K URLGenius clicks).
+      </div>
+    </div>
+
+    <!-- LANDING PAGE -->
+    <div>
+      <div style="font-size:11px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:#888;margin-bottom:10px;">🖥️ Shoppable Landing Page — /shop/barbie</div>
+      <div class="landing-frame">
+        <div class="lp-header">
+          <div class="lp-logo">Mommy<span>&amp;</span>Me</div>
+          <div style="font-size:11px;color:#aaa;">Steph's Picks</div>
+          <div class="lp-header-right">mommyandmecollective.com</div>
+        </div>
+
+        <div class="lp-hero" style="background:linear-gradient(135deg,#FF69B4,#FFB6C1);padding:24px 24px 20px;">
+          <div class="lp-eyebrow" style="color:rgba(255,255,255,0.9);">💕 Steph's Barbie Guide</div>
+          <h3 style="color:white;font-size:26px;">The Barbie Picks<br>My Daughter Won't Stop Playing With</h3>
+          <p style="color:rgba(255,255,255,0.85);">Ranked by how much she actually uses them, not just how cute the box looks.</p>
+        </div>
+
+        <div style="padding:12px 24px 8px;">
+          <div class="lp-promo-bar" style="background:linear-gradient(90deg,#D63384,#E91E8C);">
+            <div class="promo-icon">🎀</div>
+            <div>
+              <div class="promo-text">12% Creator Connections commission active now</div>
+              <div class="promo-sub">Barbie Always On Q1 2026 — click through to support Steph</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lp-products">
+          <div class="lp-section-label">Most popular</div>
+
+          <a class="product-card-row" href="#">
+            <div class="pc-img" style="background:#FFD6E7;"><div class="emoji-img">🏠</div></div>
+            <div class="pc-info">
+              <div class="pc-name">Barbie DreamHouse (75+ accessories)</div>
+              <div class="pc-meta">Light-up elevator • 37K+ clicks • Amazon exclusive</div>
+              <div class="pc-price-row">
+                <span class="pc-price">$199.99</span>
+                <span class="pc-retailer">Amazon</span>
+                <span class="pc-hot">🔥 Most clicked</span>
+              </div>
+            </div>
+            <div class="pc-arrow">›</div>
+          </a>
+
+          <a class="product-card-row" href="#">
+            <div class="pc-img" style="background:#FFE4F0;"><div class="emoji-img">🐔</div></div>
+            <div class="pc-info">
+              <div class="pc-name">Hatch &amp; Gather Egg Farm</div>
+              <div class="pc-meta">Hatching molds, dough &amp; 10 animals • 4.7 ⭐</div>
+              <div class="pc-price-row">
+                <span class="pc-price">$20.72</span>
+                <span class="pc-retailer">Amazon</span>
+                <span class="pc-hot">💡 Unique pick</span>
+              </div>
+            </div>
+            <div class="pc-arrow">›</div>
+          </a>
+
+          <a class="product-card-row" href="#">
+            <div class="pc-img" style="background:#F8D7E8;"><div class="emoji-img">🐶</div></div>
+            <div class="pc-info">
+              <div class="pc-name">Barbie Pet Boutique Playset</div>
+              <div class="pc-meta">4 pets + color-change grooming • Ages 3–7</div>
+              <div class="pc-price-row">
+                <span class="pc-price">$15.58</span>
+                <span class="pc-retailer">Amazon</span>
+              </div>
+            </div>
+            <div class="pc-arrow">›</div>
+          </a>
+
+          <a class="product-card-row" href="#">
+            <div class="pc-img" style="background:#FCE4EC;"><div class="emoji-img">🚐</div></div>
+            <div class="pc-info">
+              <div class="pc-name">3-in-1 Dream Camper</div>
+              <div class="pc-meta">Converts to truck, boat &amp; house • 50 accessories</div>
+              <div class="pc-price-row">
+                <span class="pc-price">$21.35</span>
+                <span class="pc-retailer">Amazon</span>
+              </div>
+            </div>
+            <div class="pc-arrow">›</div>
+          </a>
+        </div>
+
+        <div class="lp-footer-cta" style="background:linear-gradient(90deg,#D63384,#2C2825);">
+          <div class="cta-text">
+            <strong>Also: Barbie + Crayola Coloring Set</strong>
+            Mess-free, under $10 — perfect add-on for younger siblings
+          </div>
+          <div class="cta-btn">See It →</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div><!-- /barbie section -->
+
+<div class="brand-divider"><hr></div>
+
+<!-- ════════════════════════════════════════════════
+     BRAND 3: SPACEID — TIER 2
+════════════════════════════════════════════════ -->
+<div class="brand-section">
+  <div class="brand-section-header">
+    <span class="brand-badge badge-t2">⚡ Tier 2 — CC + Archer + Amazon</span>
+    <h2>SpaceAid</h2>
+    <span class="meta">$1.3K AMZ · 77 units · $6.97M CC budget · 10–20% commission · Archer: 481 SKUs</span>
+  </div>
+
+  <div class="mockup-grid">
+
+    <!-- PHONE: FB POST -->
+    <div>
+      <div style="font-size:11px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:#888;margin-bottom:10px;">📱 Organic Facebook Post</div>
+      <div class="phone-frame">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <div class="fb-post">
+            <div class="fb-header">
+              <div class="fb-avatar" style="background:linear-gradient(135deg,#3DBFB8,#2A9D96);">M</div>
+              <div class="fb-meta">
+                <div class="fb-name">Mommy &amp; Me Collective 🤝</div>
+                <div class="fb-sub">Everyday with Steph · 2 hrs ago</div>
+              </div>
+              <div style="font-size:18px;color:#ccc;">···</div>
+            </div>
+
+            <div class="fb-caption">
+              <span class="emoji">😤</span> I was SO over stepping on toys at 2am so I finally fixed it and I'm not going back 😂<br><br>
+              The SpaceAid toy bins have been a GAME CHANGER. My kids can actually see what they have so they use more of their toys (and put them away... sometimes 😅)<br><br>
+              The stuffed animal storage tower especially — it holds SO much and takes up like no floor space 🤩 link below!
+              <br><br>
+              <span class="brand-tag">#ToyOrganization #KidsRoomOrganization #MomHacks #SpaceAid</span>
+            </div>
+
+            <div class="fb-product-collage">
+              <div class="fb-collage-inner collage-hero">
+                <div class="collage-cell main" style="background:#E8F5F4;">
+                  <div class="emoji-img">🧸</div>
+                  <div class="price-badge">$39.99</div>
+                  <div class="commission-ribbon">10% CC</div>
+                  <div class="collage-overlay">Stuffed Animal Storage</div>
+                </div>
+                <div class="collage-cell" style="background:#D4F0EE;">
+                  <div class="emoji-img">🎪</div>
+                  <div class="collage-overlay">24-Bin Organizer</div>
+                </div>
+                <div class="collage-cell" style="background:#C8EBE9;">
+                  <div class="emoji-img">👟</div>
+                  <div class="collage-overlay">Shoe Rack Tower</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="fb-link-preview">
+              <strong>SpaceAid Toy Org — Steph's Setup →</strong>
+              mommyandmecollective.com/shop/toy-organization
+            </div>
+
+            <div class="fb-cta-bar">
+              <button class="fb-cta-btn" style="background:#3DBFB8;">🧸 Shop Toy Storage</button>
+              <div style="font-size:18px;">👍 💬 ↗️</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:12px;font-size:11px;color:#888;font-weight:700;padding:0 4px;">
+        ✏️ <em>Voice note:</em> Pain-point first (stepping on toys), solution second. Relatable mom humor earns the share. SpaceAid's 481 Archer SKUs = easy product expansion post-enrollment.
+      </div>
+    </div>
+
+    <!-- LANDING PAGE -->
+    <div>
+      <div style="font-size:11px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:#888;margin-bottom:10px;">🖥️ Shoppable Landing Page — /shop/toy-organization</div>
+      <div class="landing-frame">
+        <div class="lp-header">
+          <div class="lp-logo">Mommy<span>&amp;</span>Me</div>
+          <div style="font-size:11px;color:#aaa;">Steph's Picks</div>
+          <div class="lp-header-right">mommyandmecollective.com</div>
+        </div>
+
+        <div class="lp-hero" style="background:linear-gradient(135deg,#1A7B77,#3DBFB8);padding:24px 24px 20px;">
+          <div class="lp-eyebrow" style="color:rgba(255,255,255,0.9);">🧸 Steph's Sanity Savers</div>
+          <h3 style="color:white;font-size:24px;">The Toy Storage System<br>That Finally Worked</h3>
+          <p style="color:rgba(255,255,255,0.85);">No more toy explosions. No more 2am stepping hazards. This is the exact setup I use.</p>
+        </div>
+
+        <div style="padding:12px 24px 8px;">
+          <div class="lp-promo-bar" style="background:linear-gradient(90deg,#1A7B77,#2A9D96);">
+            <div class="promo-icon">📦</div>
+            <div>
+              <div class="promo-text">SpaceAid: 10–20% via Creator Connections</div>
+              <div class="promo-sub">$6.9M active CC budget — toys, baby + home organization</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lp-products">
+          <div class="lp-section-label">The setup I use</div>
+
+          <a class="product-card-row" href="#">
+            <div class="pc-img" style="background:#E8F5F4;"><div class="emoji-img">🧸</div></div>
+            <div class="pc-info">
+              <div class="pc-name">Stuffed Animal Storage Tower</div>
+              <div class="pc-meta">Holds 30+ plushies • Space-saving vertical • 20% CC</div>
+              <div class="pc-price-row">
+                <span class="pc-price">$39.99</span>
+                <span class="pc-retailer">Amazon</span>
+                <span class="pc-hot">🔥 Best deal</span>
+              </div>
+            </div>
+            <div class="pc-arrow">›</div>
+          </a>
+
+          <a class="product-card-row" href="#">
+            <div class="pc-img" style="background:#D4F0EE;"><div class="emoji-img">🎪</div></div>
+            <div class="pc-info">
+              <div class="pc-name">Toy Organizer with 24 Bins</div>
+              <div class="pc-meta">Color-coded bins • Open-front easy access • 10% CC</div>
+              <div class="pc-price-row">
+                <span class="pc-price">$59.99</span>
+                <span class="pc-retailer">Amazon</span>
+                <span class="pc-hot">💡 Room staple</span>
+              </div>
+            </div>
+            <div class="pc-arrow">›</div>
+          </a>
+
+          <a class="product-card-row" href="#">
+            <div class="pc-img" style="background:#E0F7F5;"><div class="emoji-img">🎪</div></div>
+            <div class="pc-info">
+              <div class="pc-name">Toy Organizer Rack — 12 Bins</div>
+              <div class="pc-meta">Smaller footprint • 9 shelves + 9 bins option too</div>
+              <div class="pc-price-row">
+                <span class="pc-price">$44.99</span>
+                <span class="pc-retailer">Amazon</span>
+              </div>
+            </div>
+            <div class="pc-arrow">›</div>
+          </a>
+
+          <a class="product-card-row" href="#">
+            <div class="pc-img" style="background:#C8EBE9;"><div class="emoji-img">👟</div></div>
+            <div class="pc-info">
+              <div class="pc-name">7-Tier Rotating Shoe Rack</div>
+              <div class="pc-meta">360° lazy susan • Already selling via Steph's links</div>
+              <div class="pc-price-row">
+                <span class="pc-price">$17.19</span>
+                <span class="pc-retailer">Amazon</span>
+              </div>
+            </div>
+            <div class="pc-arrow">›</div>
+          </a>
+        </div>
+
+        <div class="lp-footer-cta" style="background:linear-gradient(90deg,#1A7B77,#2C2825);">
+          <div class="cta-text">
+            <strong>Also in Archer catalog:</strong>
+            Baby bottle drying racks at 20% CC. Add to your baby gear posts!
+          </div>
+          <div class="cta-btn">See More →</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div><!-- /spaceid section -->
+
+<!-- bottom spacing -->
+<div style="height:60px;"></div>
+
+</body>
+</html>
