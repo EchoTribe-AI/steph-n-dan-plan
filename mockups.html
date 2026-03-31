@@ -996,5 +996,130 @@
 <!-- bottom spacing -->
 <div style="height:60px;"></div>
 
+
+<!-- ===== Universal Navigation ===== -->
+<style>
+  #unav-fab {
+    position: fixed;
+    top: 14px;
+    right: 14px;
+    z-index: 9999;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ae2f34, #ff6b6b);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(174,47,52,0.45);
+    transition: transform 0.18s, box-shadow 0.18s;
+  }
+  #unav-fab:hover { transform: scale(1.08); box-shadow: 0 6px 20px rgba(174,47,52,0.55); }
+  #unav-fab svg { width: 22px; height: 22px; fill: none; stroke: #fff; stroke-width: 2.2; stroke-linecap: round; }
+  #unav-overlay {
+    display: none;
+    position: fixed; inset: 0; z-index: 9998;
+    background: rgba(33,26,26,0.45);
+    backdrop-filter: blur(3px);
+  }
+  #unav-overlay.open { display: block; }
+  #unav-drawer {
+    position: fixed;
+    top: 0; right: -320px;
+    width: 300px; height: 100%;
+    z-index: 9999;
+    background: #fff8f7;
+    box-shadow: -8px 0 40px rgba(33,26,26,0.18);
+    border-radius: 1.5rem 0 0 1.5rem;
+    transition: right 0.3s cubic-bezier(0.4,0,0.2,1);
+    display: flex; flex-direction: column;
+    overflow: hidden;
+  }
+  #unav-drawer.open { right: 0; }
+  #unav-drawer-head {
+    background: linear-gradient(135deg, #ae2f34 0%, #ff6b6b 100%);
+    padding: 28px 20px 22px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  #unav-drawer-head span {
+    font-family: 'Plus Jakarta Sans', 'Be Vietnam Pro', sans-serif;
+    font-weight: 800; font-size: 1.05rem; letter-spacing: 0.08em;
+    text-transform: uppercase; color: #fff;
+  }
+  #unav-close {
+    background: rgba(255,255,255,0.2); border: none; cursor: pointer;
+    width: 32px; height: 32px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.15s;
+  }
+  #unav-close:hover { background: rgba(255,255,255,0.35); }
+  #unav-close svg { width: 16px; height: 16px; fill: none; stroke: #fff; stroke-width: 2.5; stroke-linecap: round; }
+  #unav-links { flex: 1; padding: 12px 0; overflow-y: auto; }
+  .unav-link {
+    display: flex; align-items: center; gap: 14px;
+    padding: 14px 22px;
+    text-decoration: none;
+    font-family: 'Plus Jakarta Sans', 'Be Vietnam Pro', sans-serif;
+    font-weight: 600; font-size: 0.92rem;
+    color: #211a1a;
+    border-left: 3px solid transparent;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+  }
+  .unav-link:hover, .unav-link.active {
+    background: #fff0f0; border-left-color: #ae2f34; color: #ae2f34;
+  }
+  .unav-link-icon {
+    width: 36px; height: 36px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem;
+    background: #f9ebea;
+    flex-shrink: 0;
+  }
+  .unav-link:hover .unav-link-icon, .unav-link.active .unav-link-icon {
+    background: #ffdad8;
+  }
+  .unav-divider { height: 1px; background: #eddfdf; margin: 6px 22px; }
+</style>
+
+<button id="unav-fab" onclick="unavOpen()" aria-label="Navigation menu">
+  <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+</button>
+<div id="unav-overlay" onclick="unavClose()"></div>
+<aside id="unav-drawer" role="navigation" aria-label="Site navigation">
+  <div id="unav-drawer-head">
+    <span>Mommy &amp; Me</span>
+    <button id="unav-close" onclick="unavClose()" aria-label="Close menu">
+      <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <nav id="unav-links">
+    <a class="unav-link" href="index.html"><span class="unav-link-icon">🏠</span>Home</a>
+    <a class="unav-link" href="barbie1.html"><span class="unav-link-icon">🎀</span>Barbie Picks</a>
+    <a class="unav-link" href="barbie2.html"><span class="unav-link-icon">💕</span>Barbie Sanctuary</a>
+    <a class="unav-link" href="monsterjam1.html"><span class="unav-link-icon">🚗</span>Monster Jam</a>
+    <a class="unav-link" href="toystorage.html"><span class="unav-link-icon">🧸</span>Toy Storage</a>
+    <div class="unav-divider"></div>
+    <a class="unav-link" href="amazon.html"><span class="unav-link-icon">📊</span>Amazon Strategy</a>
+    <a class="unav-link" href="reddit.html"><span class="unav-link-icon">💬</span>Reddit Intelligence</a>
+    <a class="unav-link" href="mockups.html"><span class="unav-link-icon">🎨</span>Brand Mockups</a>
+    <a class="unav-link" href="playbook.html"><span class="unav-link-icon">📋</span>Content Playbook</a>
+  </nav>
+</aside>
+<script>
+  (function(){
+    function unavOpen(){ document.getElementById('unav-drawer').classList.add('open'); document.getElementById('unav-overlay').classList.add('open'); }
+    function unavClose(){ document.getElementById('unav-drawer').classList.remove('open'); document.getElementById('unav-overlay').classList.remove('open'); }
+    window.unavOpen = unavOpen;
+    window.unavClose = unavClose;
+    var cur = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.unav-link').forEach(function(a){
+      if(a.getAttribute('href') === cur){ a.classList.add('active'); }
+    });
+    document.addEventListener('keydown', function(e){ if(e.key==='Escape') unavClose(); });
+  })();
+</script>
+<!-- ===== End Universal Navigation ===== -->
 </body>
 </html>
