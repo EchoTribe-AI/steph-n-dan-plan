@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Barbie Picks | Mommy &amp; Me</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Be+Vietnam+Pro:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed": "#7cf6ec",
+              "on-primary-fixed-variant": "#8c1520",
+              "secondary-container": "#79f3ea",
+              "surface-bright": "#fff8f7",
+              "on-surface": "#211a1a",
+              "inverse-on-surface": "#fceeed",
+              "on-tertiary-fixed": "#3c0701",
+              "primary-fixed-dim": "#ffb3b0",
+              "secondary": "#006a65",
+              "surface-container-highest": "#eddfdf",
+              "surface-container-lowest": "#ffffff",
+              "on-surface-variant": "#584140",
+              "tertiary-fixed": "#ffdad2",
+              "on-tertiary-container": "#5c1f11",
+              "surface-variant": "#eddfdf",
+              "on-primary-container": "#6d0010",
+              "error": "#ba1a1a",
+              "primary-fixed": "#ffdad8",
+              "on-tertiary-fixed-variant": "#763222",
+              "outline": "#8c706f",
+              "tertiary": "#944937",
+              "surface-container-low": "#fff0f0",
+              "surface": "#fff8f7",
+              "on-primary": "#ffffff",
+              "outline-variant": "#e0bfbd",
+              "on-secondary-fixed": "#00201e",
+              "on-background": "#211a1a",
+              "tertiary-fixed-dim": "#ffb4a3",
+              "on-primary-fixed": "#410006",
+              "surface-container": "#f9ebea",
+              "tertiary-fixed-dim": "#ffb4a3",
+              "on-error-container": "#93000a",
+              "inverse-primary": "#ffb3b0",
+              "surface-tint": "#ae2f34",
+              "primary": "#ae2f34",
+              "on-tertiary": "#ffffff",
+              "primary-container": "#ff6b6b",
+              "inverse-surface": "#362f2f",
+              "on-secondary-container": "#006f69"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Be Vietnam Pro"],
+              "label": ["Be Vietnam Pro"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body {
+            background-color: #fff8f7;
+            color: #211a1a;
+            font-family: 'Be Vietnam Pro', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .glass-nav {
+            backdrop-filter: blur(20px);
+        }
+        .asymmetric-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 1.5rem;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#fff8f7]/80 dark:bg-[#211a1a]/80 backdrop-blur-xl shadow-[0_24px_24px_0_rgba(33,26,26,0.06)]">
+<div class="flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant/30">
+<img class="w-full h-full object-cover" data-alt="close-up portrait of a stylish mother smiling warmly, soft morning natural lighting, lifestyle photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy-6lkLJ5dLlTDFUKbYvFB0-pcXaozCjkAFu7_O3lYf_1vJasp7fK-5MKrCbQcucz7eineu0egH1F5qXZ8gHd8VaEuyaztTzjt0_h5KiZpCNv8BrU3vD_acPRyr30zh7J9N1BdtOrutPsdsrURC4Cy6r7R-WwDW3MJU2HdEhg462a4PTSorOiyVrchx9oGRwvdBkfpsvIWokLO-yo5v5msmfDhfiKtIABaskJ6CWTMLvlZdjiPvpz4Y8-q3K4E3TraIu6loTwwSwPU"/>
+</div>
+<span class="text-[#ae2f34] dark:text-[#ff6b6b] font-extrabold tracking-[0.1rem] font-['Plus_Jakarta_Sans'] text-sm uppercase">MOMMY &amp; ME</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#211a1a]/60 hover:opacity-80 transition-opacity cursor-pointer">notifications</span>
+<span class="material-symbols-outlined text-[#211a1a]/60 hover:opacity-80 transition-opacity cursor-pointer">menu</span>
+</div>
+</div>
+</header>
+<main class="pt-20 px-4 max-w-md mx-auto">
+<!-- Hero Section -->
+<section class="relative mb-10 mt-4">
+<div class="relative rounded-xl overflow-hidden aspect-[4/5] shadow-2xl">
+<img class="w-full h-full object-cover" data-alt="aesthetic overhead shot of pink barbie accessories, dreamhouse furniture, and dolls arranged artistically on a cream rug, soft daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAs3UkM5pTBzaCkVacGcRct31MrocGKlyZq7GMb6_HQ7pp6_7gEYOEa5hpv7tmMEqruML1tr6ZnjVdsedK9AYTkzIzIL5XQ208P2Zpqt_HLycbkqlYq4ONBBqAzauy6EvzXXduiclIt4iHr19073B30rYxM0EW2JC4kCXp0xjSCyF4LodMEfhxPBLbmLP_bQ1dyuZqDhQw7GL4mmtjBp-TgXASYI_U0MJWs5uV9EVtbNF13qbWakFkEr8bjD5sCkBiT-Jr-aWSBW2QM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-transparent to-transparent"></div>
+<!-- Commission Badge -->
+<div class="absolute top-4 right-4 bg-primary text-on-primary font-headline font-bold px-4 py-2 rounded-full text-xs shadow-lg flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">stars</span>
+                    12% COMMISSION
+                </div>
+<div class="absolute bottom-6 left-6 right-6">
+<h1 class="font-headline font-extrabold text-3xl text-white leading-tight tracking-tight mb-2">
+                        The Barbie Picks My Daughter Won't Stop Playing With
+                    </h1>
+<p class="text-white/80 font-body text-sm">Curated collection of the most loved Barbie sets of the season.</p>
+</div>
+</div>
+</section>
+<!-- Product Grid (Asymmetric) -->
+<section class="space-y-8">
+<div class="flex justify-between items-end mb-4">
+<h2 class="font-headline font-bold text-xl text-primary">Must-Haves</h2>
+<span class="text-xs font-label font-bold uppercase tracking-widest text-on-surface-variant/60">4 Items Found</span>
+</div>
+<!-- Product Card 1: Dreamhouse -->
+<div class="bg-surface-container-lowest rounded-lg p-4 shadow-[0_24px_24px_0_rgba(33,26,26,0.04)] relative">
+<!-- Hot Tag -->
+<div class="absolute -top-3 -left-2 bg-primary text-on-primary text-[10px] font-headline font-black px-3 py-1 rounded-sm shadow-md rotate-[-2deg] z-10">
+                    MOST CLICKED
+                </div>
+<div class="flex gap-4">
+<div class="w-1/3 aspect-square rounded-DEFAULT overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Barbie dreamhouse toy set detailed view with elevator and pool, vibrant pink colors, studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDJWiPuQbvpEfsEQfOHCo5t0r_PbykxuVNZzR6A59z98Vx4VjgDcFpMyJznn_XJfoceLAz4BFHq6dyefZIr-uqZQv0htlqb9Pr5-mWPvCidvCvH8QEkYbGhtBReyIlJuCWoLr-vVnYLtk70O9NCH9Qj4MFhi7TO8UK0p8ZfYZbv3Oh7OK-id8UPhaKaV66XYB_sWIxGsnRnG9dMSy9CUy6ozcGxAxmUvalbXohL8enYxP5qTkCBR0ZS2RFFq7vA_hAU60VsZWGpFGY"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline font-bold text-lg leading-snug">Barbie Dreamhouse</h3>
+<div class="flex items-center gap-2 mt-1">
+<span class="text-primary font-bold">$179.00</span>
+<div class="h-4 w-[1px] bg-outline-variant/30"></div>
+<div class="flex items-center gap-1">
+<img class="w-4 h-4 opacity-70" data-alt="amazon logo icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeP7nTXaZN3uXfP64xC7svFK1CLwG6WePuQ_crPBKf3WsdyYUuigBh5H0_OES1lNe8j7Ylyz7hJLlKziDUphUeehC_LLtHf3mW4g-y6mG7wp2JWmnNRW9WWFA89HRiFKhST19-d0AehGFKxcWkBnaLbcauPFhhx0Gdjb_FXgRTCKSD7xloa3GnFpUX8cXHXDcSsoEKdCdW7I1CNQeq4F3mibJeFgqPeEg_YnNRggDl1eY8e1RR-5gdiKw5UWzxPf1SUWO0UV8GK-lj"/>
+<span class="text-[10px] text-on-surface-variant">Amazon</span>
+</div>
+</div>
+</div>
+<button class="mt-3 w-full py-2.5 rounded-full bg-gradient-to-br from-primary to-primary-container text-on-primary font-headline font-bold text-xs shadow-md active:scale-95 transition-all">
+                            SHOP NOW
+                        </button>
+</div>
+</div>
+</div>
+<!-- Product Card 2: Hatch & Gather -->
+<div class="bg-surface-container-lowest rounded-lg p-4 shadow-[0_24px_24px_0_rgba(33,26,26,0.04)]">
+<div class="flex gap-4">
+<div class="w-1/3 aspect-square rounded-DEFAULT overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Barbie Hatch and Gather Egg Farm playset with chickens and accessories, soft focused nursery background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnVHkk1DWXYCSclITv5nvXZmhZiHUS5sgZ2r28wEaNzFptR5x7GoXdKZUrsVlglKrLW51ivefU1E00fphzx49dE2XRjgceOsq1scktmQQZulShoCkEOQtrh5QB1A27jNB1-QZhdEKHv6QX4sTvsbQnm6yEuFzNEwpMooVXoYmEF4qaT0oBKYH1KjPqqptSPscHQg0OjOUu90kt_Nn_zPwBebBdItzwjA4Gfkan5XyE-PmMPeFUX_pxwRMlicQ5EZIdKySbxB27P2kE"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="font-headline font-bold text-lg leading-snug">Hatch &amp; Gather Egg Farm</h3>
+<span class="material-symbols-outlined text-primary text-xl">favorite</span>
+</div>
+<div class="flex items-center gap-2 mt-1">
+<span class="text-primary font-bold">$34.99</span>
+<div class="h-4 w-[1px] bg-outline-variant/30"></div>
+<div class="flex items-center gap-1">
+<img class="w-4 h-4 opacity-70" data-alt="target logo icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjKNmqWVLd-tx4sp6umkVvZWAebr5zMeG0Xg32RsPmCxLXW4Mtd-ESL2oUBLC4LJoTGO_bt5nVIGFeyKnOoy2RAmQxLy1eQNefMcWcAiKCIfth9F3GZ8_Ayt_1LYdlTMZo7jSXxs9C0FYYLhLadm0X30hlbdHbSfeMm6o1SkGAWU8XUGJLwdHGnEbyqmyN67olYHMYZc8bMv_7aYgTKJ13CKA2Iq21ihVQz9i8nSZgwq4m8IuIciU-g9xyxCTHfG3loBqfAeh5QkEp"/>
+<span class="text-[10px] text-on-surface-variant">Target</span>
+</div>
+</div>
+</div>
+<button class="mt-3 w-full py-2.5 rounded-full bg-surface-container-high text-on-surface font-headline font-bold text-xs active:scale-95 transition-all">
+                            VIEW DETAILS
+                        </button>
+</div>
+</div>
+</div>
+<!-- Product Card 3: Pet Boutique -->
+<div class="bg-surface-container-lowest rounded-lg p-4 shadow-[0_24px_24px_0_rgba(33,26,26,0.04)] relative">
+<!-- Unique Tag -->
+<div class="absolute -top-3 right-4 bg-secondary text-white text-[10px] font-headline font-black px-3 py-1 rounded-sm shadow-md z-10">
+                    UNIQUE PICK
+                </div>
+<div class="flex gap-4">
+<div class="w-1/3 aspect-square rounded-DEFAULT overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Barbie Pet Boutique playset with small dog figures and grooming station, bright playful lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmvJSe_YnVCFAMHVKluQcM2XY3ZFNS1DvJsNeX5mdFzgt_toI1cP6PTMtDpLOunFsIU7gmAT0gHoO_jw4yH5sQHjw_6eH0XaCATpYfCynCb5xhwGurrHEeLBnNoqem1B-ulXlVnV4PqpwlvJ9nFk9wHlsOAt2b67M0hzk81XwXRK9jTmFB0dWdnmgx6GK5l7y45jv8cLbfQh8_8j2la1VsVApz6-Jil7TpEOfUxroNeSf8UuYkLXsKr7eWkrHzCaWNi4hNyBL4D-xI"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline font-bold text-lg leading-snug">Barbie Pet Boutique</h3>
+<div class="flex items-center gap-2 mt-1">
+<span class="text-primary font-bold">$29.99</span>
+<div class="h-4 w-[1px] bg-outline-variant/30"></div>
+<div class="flex items-center gap-1">
+<img class="w-4 h-4 opacity-70" data-alt="walmart logo icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChTHPHKGZH8BAkqQfnYisZ8ZPmz0XlsKpMchaPbkRCzP5pN6Rd_zmTMLntQ9ZgECe9wwkKp5Ip-Tq_cxB_RWriWGBnyLqOHjzxuYjDdEJg3rMAN3hjEP5eHh3fXUcGJzfmg01lAyWnZjX4S0mze66ClpDHlmz3cbAb9snQlev9IuI-Lx46r_N-7W9MzrVgBOSQqkt1sY4NJnns0DSvHbPzgxTmP9JSgaYiRTsyeU5a9ozFeQfSWP5gLu8hGJGMKIYe71qFfZxH3EEo"/>
+<span class="text-[10px] text-on-surface-variant">Walmart</span>
+</div>
+</div>
+</div>
+<button class="mt-3 w-full py-2.5 rounded-full bg-gradient-to-br from-primary to-primary-container text-on-primary font-headline font-bold text-xs shadow-md active:scale-95 transition-all">
+                            SHOP NOW
+                        </button>
+</div>
+</div>
+</div>
+<!-- Product Card 4: Dream Camper -->
+<div class="bg-surface-container-lowest rounded-lg p-4 shadow-[0_24px_24px_0_rgba(33,26,26,0.04)]">
+<div class="flex gap-4">
+<div class="w-1/3 aspect-square rounded-DEFAULT overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Barbie 3-in-1 Dream Camper toy van opened up showing kitchen and sleeping areas, high-end toy photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9CI1ocE81hhmohCIa2hSzoM8n2Pk8O4vvR3m8UFuEXN5NE4PSMUZuS9Y1iRJ0XKzrgK8lqa_IdWQgL6F81U7m7owiqETrHWZRCQuAn5G6AWDdZ9Kq3-3ao8ACRBpUq2o6tKOirNeCW-f5XkJbDGXNblUPQsnFDVYwrylHeWgVqoY0O3_-dtPkWn5paM42okaS0uCaROGZnbmPy90Sm3yjJNEbtml3FJIVxdUBYES38ElisGC7pcblmCnqM_0sxadBaNkWF4M3ZO2I"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline font-bold text-lg leading-snug">3-in-1 Dream Camper</h3>
+<div class="flex items-center gap-2 mt-1">
+<span class="text-primary font-bold">$99.00</span>
+<div class="h-4 w-[1px] bg-outline-variant/30"></div>
+<div class="flex items-center gap-1">
+<img class="w-4 h-4 opacity-70" data-alt="amazon logo icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmTtkU9MMU3zrhonpgdZSVsVJn7LvC_lsZjaSnjvCaUdzP_Y5SCV6dHW1fRf_JSRAykOVqc7kfkkEE0lhszbyzi-E58gem85timbso-WnTTfctPcEKbCZ841W7ogb2wUOi602CN8kQDNzR3wdwZmjxoi7TA11-rdRlWK5JvYFcw5pNeUGJXdPiPhcSjGnYQQ1ee-AI3cmcjKIRi73M8lezNKhz1KaNpSrO0Sg53Ri4YRhvGdzCplgnpz9AjQIhJ2ZXOewUX27l0d4W"/>
+<span class="text-[10px] text-on-surface-variant">Amazon</span>
+</div>
+</div>
+</div>
+<button class="mt-3 w-full py-2.5 rounded-full bg-surface-container-high text-on-surface font-headline font-bold text-xs active:scale-95 transition-all">
+                            VIEW DETAILS
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- AI Assistant Recommendation -->
+<section class="mt-12 bg-surface-container-low rounded-xl p-6 border border-outline-variant/15">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-secondary">Smart Curation AI</h4>
+<p class="text-[10px] font-label uppercase tracking-widest text-secondary/60">Optimized for your preferences</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-lg italic text-on-surface-variant text-sm leading-relaxed relative">
+                "Based on your recent browsing of educational toys, the <strong>Hatch &amp; Gather Egg Farm</strong> is the best-rated pick for cognitive development in 4-6 year olds."
+                <div class="absolute -bottom-1 -left-1 w-4 h-4 bg-surface-container-lowest rotate-45"></div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-3 bg-[#fff8f7]/80 dark:bg-[#211a1a]/80 backdrop-blur-xl rounded-t-[3rem] z-50 shadow-[0_-8px_24px_rgba(33,26,26,0.04)]">
+<a class="flex flex-col items-center justify-center text-[#211a1a]/50 dark:text-white/50 px-4 py-2 hover:text-[#ff6b6b] transition-colors active:scale-95 duration-300" href="#">
+<span class="material-symbols-outlined mb-1">auto_awesome_motion</span>
+<span class="font-['Be_Vietnam_Pro'] text-[10px] font-medium uppercase tracking-tighter">Feed</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-gradient-to-br from-[#ff6b6b] to-[#ae2f34] text-white rounded-full px-6 py-2 shadow-lg active:scale-95 transition-all duration-300" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">explore</span>
+<span class="font-['Be_Vietnam_Pro'] text-[10px] font-medium uppercase tracking-tighter">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#211a1a]/50 dark:text-white/50 px-4 py-2 hover:text-[#ff6b6b] transition-colors active:scale-95 duration-300" href="#">
+<span class="material-symbols-outlined mb-1">smart_toy</span>
+<span class="font-['Be_Vietnam_Pro'] text-[10px] font-medium uppercase tracking-tighter">AI Assistant</span>
+</a>
+</nav>
+</body></html>

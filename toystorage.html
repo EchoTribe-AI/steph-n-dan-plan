@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Be_Vietnam_Pro:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed": "#00201e",
+              "on-error": "#ffffff",
+              "tertiary-container": "#dd836e",
+              "secondary-fixed-dim": "#5dd9d0",
+              "on-surface-variant": "#584140",
+              "on-primary-container": "#6d0010",
+              "surface-variant": "#eddfdf",
+              "surface": "#fff8f7",
+              "surface-tint": "#ae2f34",
+              "secondary-fixed": "#7cf6ec",
+              "on-error-container": "#93000a",
+              "error-container": "#ffdad6",
+              "inverse-primary": "#ffb3b0",
+              "outline": "#8c706f",
+              "on-surface": "#211a1a",
+              "surface-container-high": "#f3e5e5",
+              "secondary": "#006a65",
+              "tertiary": "#944937",
+              "inverse-surface": "#362f2f",
+              "inverse-on-surface": "#fceeed",
+              "background": "#fff8f7",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-container": "#5c1f11",
+              "primary-fixed": "#ffdad8",
+              "secondary-container": "#79f3ea",
+              "surface-container-highest": "#eddfdf",
+              "outline-variant": "#e0bfbd",
+              "tertiary-fixed": "#ffdad2",
+              "surface-container": "#f9ebea",
+              "on-secondary-fixed-variant": "#00504c",
+              "on-tertiary-fixed-variant": "#763222",
+              "primary-fixed-dim": "#ffb3b0",
+              "error": "#ba1a1a",
+              "surface-container-low": "#fff0f0",
+              "surface-bright": "#fff8f7",
+              "primary": "#ae2f34",
+              "on-primary-fixed-variant": "#8c1520",
+              "primary-container": "#ff6b6b",
+              "on-primary": "#ffffff",
+              "surface-dim": "#e4d7d6",
+              "on-secondary-container": "#006f69",
+              "on-background": "#211a1a",
+              "on-tertiary-fixed": "#3c0701",
+              "on-primary-fixed": "#410006",
+              "tertiary-fixed-dim": "#ffb4a3",
+              "on-secondary": "#ffffff",
+              "on-tertiary": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Be Vietnam Pro"],
+              "label": ["Be Vietnam Pro"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        body {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            background-color: #fff8f7;
+        }
+        h1, h2, h3 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#fff8f7]/80 dark:bg-slate-900/80 backdrop-blur-md shadow-[0_24px_24px_0_rgba(33,26,26,0.06)] flex items-center justify-between px-6 py-4 w-full">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#ff6b6b]">menu</span>
+<span class="text-xl font-bold tracking-tight text-[#ae2f34] dark:text-[#ff6b6b] font-['Plus_Jakarta_Sans'] tracking-wide">Curation Sanctuary</span>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex gap-8">
+<a class="text-[#ae2f34] font-bold transition-opacity hover:opacity-80" href="#">Shop</a>
+<a class="text-slate-600 dark:text-slate-400 transition-opacity hover:opacity-80" href="#">Curate</a>
+<a class="text-slate-600 dark:text-slate-400 transition-opacity hover:opacity-80" href="#">AI Assistant</a>
+</nav>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container">
+<img alt="User Profile" data-alt="close-up portrait of a smiling woman with a soft natural look, warm golden hour lighting, professional headshot style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWLpHqskYbbtr5xhDoNRHKdOSlpZlvDDCLqN__6kkog1xxyKv8TGztr6A_bZtnEcVAxb0-fgSqOQs3VJQoTjjIHH4mAuellDtEWsuPc7N88sDcogVDdX6kpraZ7aTWF2NJ8aalIOuqXxxgEEeVsgfKjdRz-O71J-LdzPdnjREFVbuhOkRhHK94T3KSebkGSqWAS_jQffffDFcHPJb4plSjk3CW3qxBnjO4-oTIzix5LBr2JjKoz8OeAqI4deZY3WEBFv18_YKPBB6n"/>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32">
+<!-- Hero Section -->
+<section class="px-6 md:px-12 mb-16">
+<div class="relative w-full aspect-[16/9] md:aspect-[21/9] rounded-xl overflow-hidden shadow-xl">
+<img alt="Organized Nursery" class="absolute inset-0 w-full h-full object-cover" data-alt="Modern minimalist nursery with light wood furniture, woven baskets on shelves, organized wooden toys, soft natural light, airy atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBg8tsvd29SYZdv5a3j0H8IqO1nTkEVzKckfu1tcZhhot8O16i4mwkl-q6SdlxbDVJ1gRZT0PYrzK_vMw0G1KduRsYRnBnogSzvQ05aB5lPqMSrO9MziKOQnvKHr2QIjHmzjVtjHhb3gGLmaMaZmmYXTQL06QbRkDUwgaKkF-wlvEJVgO5cbqH9mQYAFm794jQr3LI2BbcGp-_6SWcIn5vtX8dLkeMoZq8LLvVPbplTki-dQ9WbPPVaEjdv83t4KoII3lrf1pUVk5Pl"/>
+<div class="absolute inset-0 bg-gradient-to-r from-on-surface/40 to-transparent flex items-center p-8 md:p-16">
+<div class="max-w-2xl text-white">
+<span class="inline-block px-4 py-1 bg-primary rounded-full text-white text-[10px] uppercase tracking-[0.05rem] font-bold mb-4">New Collection</span>
+<h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 tracking-tight">Tame the Toy Chaos: Stylish Storage Solutions</h1>
+<p class="text-lg md:text-xl opacity-90 font-body">Curated collection of functional and beautiful storage for every playroom.</p>
+<div class="mt-8">
+<button class="bg-gradient-to-br from-primary to-primary-container px-8 py-4 rounded-full font-bold text-white shadow-lg transform transition active:scale-95">Explore the Curated List</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Social Post Content Block -->
+<section class="px-6 md:px-24 mb-20">
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-[0_24px_24px_0_rgba(33,26,26,0.06)] flex flex-col md:flex-row gap-8 items-center border border-outline-variant/15">
+<div class="w-full md:w-1/3 aspect-square rounded-lg overflow-hidden shrink-0">
+<img alt="Playroom Setup" class="w-full h-full object-cover" data-alt="aesthetic overhead shot of a child's playroom floor with cream rug, pastel colored storage bins, and organized wooden blocks" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_at2nIMY4F7HcWfHWApOm0-q0xir405oM9GEwVa0ocb8JQMERZrE8uS0IiTWh5xjYV7EzijR0a6Qw0EYDInKiQI5yUqfnrEwDCqoLn4YUHII7TtK32m1hYqZKDvCISXbVvzdtAA9WqXgQbGq_UU855bMcMEVEOwydDHj_8lfJpRjX6nVCzQPXKd0eHG6KDmP7IaCVKs-CPHTmy_auIpCfVdfTg7ui3feFq05MlqP95YwhwBji8-pGiFmWyC8Uf8yWFZIB4qnbKnAV"/>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container text-sm">auto_awesome</span>
+</div>
+<span class="font-bold text-on-surface">lullaby_curator</span>
+</div>
+<p class="text-lg leading-relaxed text-on-surface-variant font-body italic">
+                        "Playroom reset! 🧺 Finding storage that actually looks good in your home is a game changer. These bins and shelves are our top picks for keeping the toys organized and the nursery looking like a sanctuary. #PlayroomOrganization #NurseryDecor #MomHacks"
+                    </p>
+<div class="mt-6 flex gap-4">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="material-symbols-outlined text-on-surface-variant">chat_bubble</span>
+<span class="material-symbols-outlined text-on-surface-variant">send</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Product Bento Grid -->
+<section class="px-6 md:px-12">
+<div class="flex justify-between items-end mb-8">
+<div>
+<h2 class="text-3xl font-bold text-on-surface">The Curated Selection</h2>
+<p class="text-on-surface-variant">Practicality meets aesthetics.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Product 1 -->
+<div class="group relative bg-surface-container-lowest rounded-lg overflow-hidden transition-all duration-300 hover:shadow-xl p-4 flex flex-col h-full">
+<div class="absolute top-6 left-6 z-10">
+<span class="bg-primary text-on-primary text-[10px] uppercase tracking-[0.05rem] font-bold px-3 py-1 rounded-full shadow-sm">Hot Pick</span>
+</div>
+<div class="aspect-[4/5] rounded-DEFAULT overflow-hidden mb-6">
+<img alt="Woven Seagrass Baskets" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Natural woven seagrass baskets with handles arranged on a light wooden shelf in a sun-drenched room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsMBk6YsGreMQImg0Y0C8BtPhc8EUfyvmFa-P9xF59KylnJ5-tuM8Z0ajORAQikkojzJvde4NxqQgy8dDL-kHeemdccLnBqDHI7z0LKiMJkWEoW2FpDzpmRqvk-Z4vzFacnefdzuK-Ui3Kyrt-jgmsOmpjt9NBt_NvL4zF30bXGBFHcNUGUweeuA8hY-nF-ECIoCGDHfJavfx7_mazV3QUp5IfL_nclocCwOASEK6WoZtHl61LUQxPqn74HJVyuVqRjIXpXPHXUPgq"/>
+</div>
+<div class="flex-1">
+<h3 class="text-xl font-bold text-on-surface mb-2">Woven Seagrass Baskets</h3>
+<p class="text-on-surface-variant text-sm mb-4">Handcrafted natural fiber bins that add warmth and texture to any corner.</p>
+</div>
+<button class="w-full py-3 rounded-full bg-surface-container-high text-on-surface font-bold hover:bg-primary hover:text-on-primary transition-colors">Shop Now</button>
+</div>
+<!-- Product 2 -->
+<div class="group relative bg-surface-container-lowest rounded-lg overflow-hidden transition-all duration-300 hover:shadow-xl p-4 flex flex-col h-full">
+<div class="aspect-[4/5] rounded-DEFAULT overflow-hidden mb-6">
+<img alt="Stackable Toy Bins" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Sleek white stackable plastic storage bins with labeled wooden tags in a clean modern playroom" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATdkgK-4hzzSWwHGDYq58cWmr_hJ3G6I6Mcw0TOYEj5N1A0xTvxae7xH9sVW3seMQAaxACjZHO1eNyEac0xuC3IMXNQux0RUltF1wZa5SCqOheYSAQ6XLtTHEZlj0dIPeJ-KeImikZ7q6tRiR9yGrIlrAqs7jA_WNbSj_FFJrp70CkyignP4hLHlv6m1pRs-rYjgXcnuE19jZgFeHt_ODc_vwOLVLrF4Y_l9j3K_1jHLwOFaofiRLshWM76Yx4qtGMlvX0MehpGTcm"/>
+</div>
+<div class="flex-1">
+<h3 class="text-xl font-bold text-on-surface mb-2">Stackable Toy Bins</h3>
+<p class="text-on-surface-variant text-sm mb-4">Modular, durable, and perfectly sized for small hands and block collections.</p>
+</div>
+<button class="w-full py-3 rounded-full bg-surface-container-high text-on-surface font-bold hover:bg-primary hover:text-on-primary transition-colors">Shop Now</button>
+</div>
+<!-- Product 3 -->
+<div class="group relative bg-surface-container-lowest rounded-lg overflow-hidden transition-all duration-300 hover:shadow-xl p-4 flex flex-col h-full">
+<div class="aspect-[4/5] rounded-DEFAULT overflow-hidden mb-6">
+<img alt="Minimalist Bookshelf" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Low-profile light oak wood bookshelf with open front display for children's books against a soft sage green wall" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDru0pJvSxEFJ9Y2vg1MQB69TMgaoI9za8jS-pMBsz31Y-VjOknZqJgETbtTEwJzDBM2if3j40xzoHQHW8FqmvwOQ3mBkEG5gRlGnU56giR1g9Ei1Fxm_XsyBVF7kj_xlvIIT7ezPVjeqG9dZSDU6hyS3ryT0e4Ul48bLpjv_0_PspJmIKqfkDw2bufoCA38b0Vn7iQhn2mMbOPvJmCK1QeDivbaIu60PRyXbN_nrQedq7HLk8R9BXE9WWQBNFWBJkLjWnnYW79NE2r"/>
+</div>
+<div class="flex-1">
+<h3 class="text-xl font-bold text-on-surface mb-2">Minimalist Bookshelf</h3>
+<p class="text-on-surface-variant text-sm mb-4">Low-profile design that encourages independent exploration and reading.</p>
+</div>
+<button class="w-full py-3 rounded-full bg-surface-container-high text-on-surface font-bold hover:bg-primary hover:text-on-primary transition-colors">Shop Now</button>
+</div>
+</div>
+</section>
+<!-- AI Assistant Floating Teaser -->
+<section class="mt-24 px-6 md:px-12">
+<div class="bg-secondary-container/30 border border-secondary/10 rounded-xl p-10 flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-secondary text-5xl mb-4" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<h2 class="text-2xl font-bold text-on-secondary-container mb-2">Not sure where to start?</h2>
+<p class="text-on-surface-variant max-w-lg mb-8">Let our AI Curated Assistant help you find the perfect storage solutions based on your room dimensions and toy types.</p>
+<div class="flex gap-4">
+<div class="bg-surface-container-lowest border border-outline-variant px-6 py-3 rounded-full flex items-center gap-3">
+<span class="text-on-surface-variant opacity-60">Try asking: "Storage for LEGOs?"</span>
+<span class="material-symbols-outlined text-secondary">send</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-3 bg-[#fff8f7]/80 dark:bg-slate-900/80 backdrop-blur-md shadow-[0_-4px_24px_0_rgba(33,26,26,0.06)] rounded-t-[3rem] z-50 md:hidden">
+<a class="flex flex-col items-center justify-center bg-[#ff6b6b] text-white rounded-full px-6 py-2 transition-all duration-200 scale-90" href="#">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="font-['Be_Vietnam_Pro'] text-[10px] uppercase tracking-[0.05rem] font-bold">Shop</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-4 py-2 hover:text-[#ff6b6b] transition-colors" href="#">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="font-['Be_Vietnam_Pro'] text-[10px] uppercase tracking-[0.05rem] font-bold">Curate</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-4 py-2 hover:text-[#ff6b6b] transition-colors" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-['Be_Vietnam_Pro'] text-[10px] uppercase tracking-[0.05rem] font-bold">AI Assistant</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-4 py-2 hover:text-[#ff6b6b] transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Be_Vietnam_Pro'] text-[10px] uppercase tracking-[0.05rem] font-bold">Profile</span>
+</a>
+</nav>
+</body></html>
