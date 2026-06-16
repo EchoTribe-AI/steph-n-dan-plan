@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EchoTribe × Mommy &amp; Me Collective — Partnership Proposal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#05051F;
+    --white:#FFFFFF;
+    --ghost:#F3F4F6;
+    --border:#E5E7EB;
+    --ink:#1A1A2E;
+    --muted:#5A5A6E;
+    --grad:linear-gradient(105deg,#8127cf 0%,#FF2D9B 100%);
+    --serif:"Libre Caslon Text",Georgia,serif;
+    --sans:"Plus Jakarta Sans",system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--sans);
+    color:var(--ink);
+    background:#E9E9EE;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    padding:48px 20px;
+  }
+  .page{
+    max-width:900px;
+    margin:0 auto;
+    background:var(--white);
+    border:1px solid var(--border);
+    border-radius:0.5rem;
+    box-shadow:0 24px 60px -28px rgba(5,5,31,0.28);
+    overflow:hidden;
+  }
+  .grad-bar{height:5px;background:var(--grad);}
+
+  .pad{padding:64px 72px;}
+  @media(max-width:640px){.pad{padding:40px 28px;}body{padding:20px 0;} .page{border-radius:0;}}
+
+  /* Header */
+  .wordmark{
+    font-family:var(--serif);
+    font-size:1.35rem;
+    letter-spacing:0.02em;
+    color:var(--navy);
+    font-weight:700;
+  }
+  .wordmark .echo{
+    background:var(--grad);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .head-row{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:12px;border-bottom:1px solid var(--ghost);padding-bottom:28px;}
+  .doc-meta{font-size:0.78rem;color:var(--muted);text-align:right;letter-spacing:0.01em;}
+
+  .eyebrow{
+    font-size:0.72rem;
+    font-weight:700;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    background:var(--grad);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    display:inline-block;
+  }
+  h1{
+    font-family:var(--serif);
+    font-weight:700;
+    font-size:2.6rem;
+    line-height:1.12;
+    color:var(--navy);
+    letter-spacing:-0.01em;
+    margin:18px 0 0;
+  }
+  @media(max-width:640px){h1{font-size:2rem;}}
+  .lede{font-size:1.05rem;color:var(--muted);margin-top:22px;max-width:62ch;}
+
+  section{margin-top:60px;}
+  .sec-label{
+    display:flex;align-items:center;gap:14px;margin-bottom:26px;
+  }
+  .sec-num{
+    font-family:var(--serif);font-style:italic;font-size:0.95rem;color:#8127cf;min-width:26px;
+  }
+  h2{
+    font-family:var(--serif);font-weight:700;font-size:1.5rem;color:var(--navy);letter-spacing:-0.01em;
+  }
+  .rule{height:1px;background:var(--ghost);flex:1;}
+
+  p.body{color:var(--ink);margin-bottom:14px;}
+  .scope-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:0.5rem;overflow:hidden;}
+  @media(max-width:640px){.scope-grid{grid-template-columns:1fr;}}
+  .scope-cell{background:var(--white);padding:24px 26px;}
+  .scope-cell h3{font-family:var(--sans);font-size:0.95rem;font-weight:700;color:var(--navy);margin-bottom:8px;}
+  .scope-cell p{font-size:0.9rem;color:var(--muted);}
+
+  /* Compensation lines */
+  .comp-line{
+    display:grid;grid-template-columns:34px 1fr auto;gap:22px;align-items:start;
+    padding:26px 0;border-top:1px solid var(--ghost);
+  }
+  .comp-line:first-of-type{border-top:none;}
+  .comp-idx{font-family:var(--serif);font-style:italic;color:#8127cf;font-size:1rem;padding-top:2px;}
+  .comp-title{font-weight:700;color:var(--navy);font-size:1.05rem;margin-bottom:5px;}
+  .comp-desc{font-size:0.9rem;color:var(--muted);max-width:48ch;}
+  .comp-amt{font-family:var(--serif);font-weight:700;color:var(--navy);font-size:1.15rem;white-space:nowrap;text-align:right;}
+  .comp-amt small{display:block;font-family:var(--sans);font-weight:500;font-size:0.72rem;color:var(--muted);letter-spacing:0.04em;text-transform:uppercase;margin-top:3px;}
+  @media(max-width:640px){
+    .comp-line{grid-template-columns:24px 1fr;}
+    .comp-amt{grid-column:2;text-align:left;margin-top:8px;font-size:1.3rem;}
+    .comp-amt small{letter-spacing:0.03em;}
+  }
+
+  .retainer-hero{
+    background:var(--navy);color:var(--white);border-radius:0.5rem;padding:40px 44px;margin-bottom:8px;
+    display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;
+  }
+  .retainer-hero .label{font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;color:#B8B8C8;font-weight:700;}
+  .retainer-hero .desc{font-size:0.9rem;color:#C9C9D6;margin-top:10px;max-width:42ch;}
+  .retainer-hero .figure{font-family:var(--serif);font-size:3rem;font-weight:700;line-height:1;}
+  .retainer-hero .figure span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .retainer-hero .per{font-size:0.85rem;color:#C9C9D6;margin-top:8px;text-align:right;}
+  @media(max-width:640px){.retainer-hero{padding:30px 26px;}.retainer-hero .figure{font-size:2.4rem;}.retainer-hero .per{text-align:left;}}
+
+  /* List blocks */
+  ul.clean{list-style:none;margin-top:6px;}
+  ul.clean li{position:relative;padding-left:26px;margin-bottom:14px;color:var(--ink);font-size:0.96rem;}
+  ul.clean li::before{content:"";position:absolute;left:0;top:10px;width:8px;height:8px;border-radius:2px;background:var(--grad);}
+  ul.clean li b{color:var(--navy);}
+
+  /* Founder-client signature card */
+  .founder{
+    background:var(--navy);border-radius:0.5rem;padding:48px 52px;color:var(--white);position:relative;overflow:hidden;
+  }
+  .founder::after{content:"";position:absolute;right:-80px;top:-80px;width:280px;height:280px;background:var(--grad);opacity:0.22;filter:blur(20px);border-radius:50%;}
+  .founder .eyebrow{position:relative;}
+  .founder h2{color:var(--white);font-size:1.6rem;margin-top:16px;position:relative;}
+  .founder .big{font-family:var(--serif);font-size:3.4rem;font-weight:700;line-height:1;margin:22px 0 6px;position:relative;}
+  .founder .big span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .founder p{color:#C9C9D6;font-size:0.98rem;position:relative;max-width:58ch;margin-top:14px;}
+  .founder p b{color:#fff;}
+  @media(max-width:640px){.founder{padding:34px 28px;}.founder .big{font-size:2.6rem;}}
+
+  /* Term grid */
+  .term-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+  @media(max-width:640px){.term-grid{grid-template-columns:1fr;}}
+  .term-cell{border:1px solid var(--border);border-radius:0.5rem;padding:22px 24px;}
+  .term-cell .k{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:#8127cf;font-weight:700;margin-bottom:8px;}
+  .term-cell .v{font-size:0.95rem;color:var(--ink);}
+
+  footer{margin-top:64px;border-top:1px solid var(--ghost);padding-top:30px;}
+  .accept{font-size:0.9rem;color:var(--muted);}
+  .sign-row{display:flex;gap:40px;margin-top:36px;flex-wrap:wrap;}
+  .sign{flex:1;min-width:200px;}
+  .sign .line{height:1px;background:var(--ink);margin-bottom:8px;}
+  .sign .who{font-size:0.78rem;color:var(--muted);}
+  .legal{font-size:0.74rem;color:#9A9AAB;margin-top:34px;line-height:1.55;}
+
+  @media print{
+    body{background:#fff;padding:0;}
+    .page{box-shadow:none;border:none;max-width:100%;}
+    .retainer-hero,.founder{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="grad-bar"></div>
+  <div class="pad">
+
+    <div class="head-row">
+      <div class="wordmark"><span class="echo">Echo</span>Tribe</div>
+      <div class="doc-meta">
+        Partnership Proposal<br>
+        Prepared for Mommy &amp; Me Collective<br>
+        June 12, 2026
+      </div>
+    </div>
+
+    <div style="margin-top:48px;">
+      <span class="eyebrow">Working Partnership</span>
+      <h1>A platform, a partnership,<br>and a stake in what it becomes.</h1>
+      <p class="lede">EchoTribe will build and run Mommy &amp; Me Collective's shopping-collections platform and operating tools, source and manage new brand deals, and run paid media — paired with a base retainer, performance upside, and founder-client participation in EchoTribe itself.</p>
+    </div>
+
+    <!-- SCOPE -->
+    <section>
+      <div class="sec-label"><span class="sec-num">I</span><h2>Scope of services</h2><span class="rule"></span></div>
+      <div class="scope-grid">
+        <div class="scope-cell">
+          <h3>Shopping platform</h3>
+          <p>The shopping-collections storefront on your owned domain, plus the internal admin tools that run it — a fast "drop a deal" curator flow for Steph and a prioritized "post this next" worklist for Lainey.</p>
+        </div>
+        <div class="scope-cell">
+          <h3>Brand deals &amp; sponsorships</h3>
+          <p>Sourcing and managing new affiliate partnerships and paid sponsorships — building toward a reliable monthly brand-deal pipeline.</p>
+        </div>
+        <div class="scope-cell">
+          <h3>Paid Meta advertising</h3>
+          <p>Building and running paid campaigns on Meta, funded by Mommy &amp; Me Collective, to amplify the products and collections that are already converting.</p>
+        </div>
+        <div class="scope-cell">
+          <h3>Attribution &amp; insights</h3>
+          <p>The reporting layer that finally answers where the revenue comes from — by channel, by collection, and by what your audience actually buys.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPENSATION -->
+    <section>
+      <div class="sec-label"><span class="sec-num">II</span><h2>Compensation</h2><span class="rule"></span></div>
+
+      <div class="retainer-hero">
+        <div>
+          <div class="label">Base retainer</div>
+          <div class="desc">Covers platform development, operations tooling, and ongoing management. Due net 15, invoiced at the start of each month, regardless of performance.</div>
+        </div>
+        <div style="text-align:right;">
+          <div class="figure">$2,500</div>
+          <div class="per">per month, due net 15</div>
+        </div>
+      </div>
+
+      <div class="comp-line">
+        <div class="comp-idx">01</div>
+        <div>
+          <div class="comp-title">Brand deals &amp; sponsorships</div>
+          <div class="comp-desc">On the gross value of new brand partnerships and paid sponsorships sourced and managed by EchoTribe.</div>
+        </div>
+        <div class="comp-amt">25%<small>of gross deal value *1st Year only</small></div>
+      </div>
+
+      <div class="comp-line">
+        <div class="comp-idx">02</div>
+        <div>
+          <div class="comp-title">Paid Meta advertising</div>
+          <div class="comp-desc">Mommy &amp; Me Collective or brand sponsors to fund ad spend. EchoTribe's share applies to profit only — ad-driven revenue minus spend. A month with no profit means no advertising fee.</div>
+        </div>
+        <div class="comp-amt">20%<small>of net attributable profit</small></div>
+      </div>
+
+      <div class="comp-line">
+        <div class="comp-idx">03</div>
+        <div>
+          <div class="comp-title">Platform-driven affiliate revenue</div>
+          <div class="comp-desc">On purchases driven by EchoTribe's AI recommendations and trending collections, measured through the platform's attribution layer within an agreed window.</div>
+        </div>
+        <div class="comp-amt">0%<small>included in retainer</small></div>
+      </div>
+    </section>
+
+    <!-- LICENSE -->
+    <section>
+      <div class="sec-label"><span class="sec-num">III</span><h2>Platform license &amp; ownership</h2><span class="rule"></span></div>
+      <ul class="clean">
+        <li><b>EchoTribe owns the platform</b> — source code, recommendation engine, attribution layer, and data models remain the property of EchoTribe Holdings, LLC.</li>
+        <li><b>Mommy &amp; Me Collective receives a license</b> to use the platform for its business throughout the term of this partnership.</li>
+        <li><b>You keep your audience.</b> Mommy &amp; Me Collective retains its data, customer and audience relationships; EchoTribe retains platform and data models.</li>
+      </ul>
+    </section>
+
+    <!-- FOUNDER CLIENT -->
+    <section>
+      <div class="founder">
+        <span class="eyebrow">Founder-Client Privilege</span>
+        <h2>A stake in the upside you helped build.</h2>
+        <div class="big"><span>10%</span></div>
+        <p>As EchoTribe's founding design partner, Mommy &amp; Me Collective receives a participation right equal to <b>10% of net proceeds if EchoTribe is acquired</b> — recognition that this partnership shaped the platform, and a share in its long-term success.</p>
+        <p>The right is contingent on an active partnership and is defined in full in the definitive agreement.</p>
+      </div>
+    </section>
+
+    <!-- TERM -->
+    <section>
+      <div class="sec-label"><span class="sec-num">IV</span><h2>Term &amp; approvals</h2><span class="rule"></span></div>
+      <div class="term-grid">
+        <div class="term-cell"><div class="k">Term</div><div class="v">Initial term of three months, then continues month to month.</div></div>
+        <div class="term-cell"><div class="k">Notice</div><div class="v">Either party may end the partnership with 30 days' written notice.</div></div>
+        <div class="term-cell"><div class="k">Approvals</div><div class="v">Brand sponsorhips and financial commitments are approved by Mommy &amp; Me Collective.</div></div>
+        <div class="term-cell"><div class="k">Definitive terms</div><div class="v">License, data rights, and acquisition participation to be set in a definitive agreement prepared with counsel.</div></div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <p class="accept">If this structure works for you both, the next step is a definitive agreement reflecting these terms. This proposal is a starting point for that conversation — numbers and terms can be adjusted together. June 1st, 2026 is the requested retoactive date to begin the partnership.</p>
+      <div class="sign-row">
+        <div class="sign"><div class="line"></div><div class="who">Kelly Hagen · EchoTribe Holdings, LLC</div></div>
+        <div class="sign"><div class="line"></div><div class="who">Mommy &amp; Me Collective</div></div>
+      </div>
+      <p class="legal">This proposal outlines a proposed business arrangement and is not a binding agreement. It is not legal or financial advice. The platform license, data rights, and acquisition-participation provisions are summarized here and will be governed by the definitive agreement.</p>
+    </footer>
+
+  </div>
+</div>
+</body>
+</html>
